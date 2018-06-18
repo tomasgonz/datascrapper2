@@ -1,0 +1,581 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"wight",
+				"weight_value"
+			],
+			[
+				"set",
+				"set_country_alias"
+			],
+			[
+				"country",
+				"country_alias"
+			],
+			[
+				"Weighted",
+				"weighted_value"
+			],
+			[
+				"weight",
+				"weight_value"
+			],
+			[
+				"wei",
+				"weighted_value"
+			],
+			[
+				"we",
+				"weight_value"
+			],
+			[
+				"right",
+				"\\rightarrow"
+			],
+			[
+				"te",
+				"\\textit{}"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "ldcs/groups.py",
+			"settings":
+			{
+				"buffer_size": 872,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "countries_data.py",
+			"settings":
+			{
+				"buffer_size": 18705,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "countrylist.py",
+			"settings":
+			{
+				"buffer_size": 4839,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Departure Sat, Jul 21\nIberia 6252\nNew York (JFK)\n8:50pm\nTerminal: 4S\nIberia 3946 operated by IBERIA EXPRESS AIRLINE\nMadrid (MAD)\n11:25am\nTerminal: 4\n\tflight to \t\nSanta Cruz de Tenerife (TFN)\n1:15pm",
+			"settings":
+			{
+				"buffer_size": 197,
+				"line_ending": "Windows",
+				"name": "Departure Sat, Jul 21"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 117.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ayu",
+				"ayu: Activate theme"
+			],
+			[
+				"theme",
+				"ayu: Activate theme"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"yui",
+				"ayu: Activate theme"
+			],
+			[
+				"convert to",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"autofo",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Channel"
+			],
+			[
+				"pep",
+				"Preferences: AutoPep8 Settings – Default"
+			],
+			[
+				"build",
+				"Build With: LaTeX - Basic Builder"
+			],
+			[
+				"",
+				"A File Icon: Changelog"
+			],
+			[
+				"upgrade",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"build ",
+				"Build With: LaTeX - Basic Builder"
+			],
+			[
+				"check",
+				"LaTeXing: Check System"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"build ba",
+				"Build With: LaTeX - Basic Builder"
+			],
+			[
+				"build basi",
+				"Build With: LaTeX - Basic Builder"
+			],
+			[
+				"build latex basi",
+				"Build With: LaTeX - Basic Builder"
+			],
+			[
+				"build latex",
+				"Build With: LaTeX"
+			],
+			[
+				"build la",
+				"Build With: LaTeX - Traditional"
+			],
+			[
+				"activa",
+				"ayu: Activate theme"
+			]
+		],
+		"width": 495.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Tomas.Gonzalez/OneDrive - United Nations/datascrapper2",
+		"/C/Users/Tomas.Gonzalez/OneDrive - United Nations/datascrapper2/data"
+	],
+	"file_history":
+	[
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/countries_data.py",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/data/Frame.py",
+		"/C/Users/Tomas.Gonzalez/OneDrive - United Nations/publications.html",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/ldcs/__init__.py",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/data/Stats.py",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/sources/worldbank/indicators.py",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/data/Utils.py",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/ldcs/groups.py",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/country.py",
+		"/C/Users/Tomas.Gonzalez/Downloads/weoreptc.csv",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/data/__init__.py",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/data/Column.py",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/data/Value.py",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/data/Row.py",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/countrylist.py",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/notebooks/countries.pkl",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/data/utils.py",
+		"/C/Users/Tomas.Gonzalez/iCloudDrive/iCloud~com~omz-software~Pythonista3/datascrapper/countries.py",
+		"/C/Users/Tomas.Gonzalez/iCloudDrive/iCloud~com~omz-software~Pythonista3/datascrapper/data/Stats.py",
+		"/C/Users/Tomas.Gonzalez/iCloudDrive/iCloud~com~omz-software~Pythonista3/datascrapper/data/Frame.py",
+		"/C/Users/Tomas.Gonzalez/iCloudDrive/iCloud~com~omz-software~Pythonista3/datascrapper/data/Cell.py",
+		"/C/Users/Tomas.Gonzalez/iCloudDrive/iCloud~com~omz-software~Pythonista3/datascrapper/countrylist.py",
+		"/C/Users/Tomas.Gonzalez/iCloudDrive/iCloud~com~omz-software~Pythonista3/datascrapper/data/Row.py",
+		"/C/Users/Tomas.Gonzalez/iCloudDrive/iCloud~com~omz-software~Pythonista3/datascrapper/data/Column.py",
+		"/Users/tomas/Dropbox/new school/AMICROI/Study guide/Index.tex",
+		"/Users/tomas/Library/Mobile Documents/iCloud~com~omz-software~Pythonista3/Documents/datascrapper/data/__init__.py",
+		"/Users/tomas/Library/Mobile Documents/iCloud~com~omz-software~Pythonista3/Documents/datascrapper/data/Stats.py",
+		"/Users/tomas/Library/Mobile Documents/iCloud~com~omz-software~Pythonista3/Documents/datascrapper/countries.py",
+		"/Users/tomas/Library/Application Support/Sublime Text 3/Packages/User/AutoPep8.sublime-settings",
+		"/Users/tomas/Library/Application Support/Sublime Text 3/Packages/AutoPep8/AutoPep8.sublime-settings",
+		"/Users/tomas/Dropbox/new school/Methodology/TEX/The idea of the Person.tex",
+		"/Users/tomas/Dropbox/new school/Methodology/TEX/library.bib",
+		"/Users/tomas/Dropbox/new school/AMI/Final/final.tex",
+		"/Users/tomas/Dropbox/new school/AMI/Fourth problem set/fourth_problem_set.tex",
+		"/Users/tomas/Dropbox/new school/AMI/Study guide/Index.tex",
+		"/Users/tomas/Dropbox/new school/AMI/Study guide/5_lr_kalecki_robinson_tradition.tex",
+		"/Users/tomas/Dropbox/new school/AMI/Study guide/8_lr_reconciling_demand_and_supply_in_the_theory_of_lr_growth.tex",
+		"/Users/tomas/Dropbox/inprogress/new school/AMI/Final/final.tex",
+		"/Users/tomas/Dropbox/inprogress/new school/AMI/Final/Index.tex",
+		"/Users/tomas/Dropbox/inprogress/new school/AMI/Study guide/6_lr_cap_utilization_harrodian_instability_plausability_of_neo-kaleckian_results.tex",
+		"/Users/tomas/Dropbox/inprogress/new school/AMI/Study guide/1_lr_competing_visions_of_the_long_run.tex",
+		"/C/Users/tomas/Dropbox/inprogress/new school/AMI/Study guide/5_lr_kalecki_robinson_tradition.tex",
+		"/C/Users/tomas/Dropbox/inprogress/new school/AMI/Study guide/3_lr_marxian_model.tex",
+		"/C/Users/tomas/Dropbox/inprogress/new school/AMI/Study guide/2_lr_neoclassical_growth_theory.tex",
+		"/C/Users/tomas/Dropbox/inprogress/new school/AMI/Study guide/4_lr_harrods_macrodynamics.tex",
+		"/C/Users/tomas/Dropbox/inprogress/new school/AMI/Study guide/6_lr_cap_utilization_harrodian_instability_plausability_of_neo-kaleckian_results.tex",
+		"/Users/tomas/Dropbox/inprogress/new school/AMI/Fourth problem set/fourth_problem_set.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/1_lr_competing_visions_of_the_long_run.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/Index.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/5_lr_kalecki_robinson_tradition.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/3_lr_marxian_model.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/4_lr_harrods_macrodynamics.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/6_lr_cap_utilization_harrodian_instability_plausability_of_neo-kaleckian_results.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/7_lr_modern_kaldorian_growth_theory.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/8_lr_reconciling_demand_and_supply_in_the_theory_of_lr_growth.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/2_lr_neoclassical_growth_theory.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/lr_modern_kaldorian_growth_theory.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/lr_kalecki_robinson_tradition.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/lr_harrods_macrodynamics.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/lr_cap_utilization_harrodian_instability_plausability_of_neo-kaleckian_results.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/am1.pdf",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/lr_marxian_model.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/lr_reconciling_demand_and_supply_in_the_theory_of_lr_growth.tex",
+		"/C/Users/tomas/Dropbox/inprogress/new school/AMI/Study guide/lr_neoclassical_growth_theory.tex",
+		"/C/Users/tomas/Dropbox/inprogress/new school/AMI/Study guide/lr_marxian_model.tex",
+		"/C/Users/tomas/Dropbox/inprogress/new school/AMI/Study guide/lr_competing_visions_of_the_long_run.tex",
+		"/C/Users/tomas/Dropbox/inprogress/new school/AMI/Study guide/Index.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/lr_neoclassical_growth_theory.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/library.bib",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/am1_bibliography.bib",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/am1 study guide.sublime-project",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/lr_introduction.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/am1.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/lr_classical_newoclassical_keynesian.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/Long_run.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/lr_neoclassical_growth_theory",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/Short_run.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/inprogress/new school/AMI/Study guide/Appendix.tex",
+		"/C/Users/Tomas.Gonzalez/Dropbox/Apps/Texpad/AMI.tex",
+		"/C/Users/Tomas.Gonzalez/AppData/Roaming/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"yemen",
+			"open forum",
+			"investme",
+			"2013",
+			"'Equatorial Guinea'",
+			"equatori",
+			"</p>",
+			"<p>",
+			"height: [0-9]*px;",
+			"style=\"height: [0-9]*px;\"",
+			"height: [0-9]*px",
+			"search",
+			"yemen",
+			"yem",
+			"add_cell",
+			"print",
+			"searc",
+			"cell"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "ldcs/groups.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 872,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								427,
+								427
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "countries_data.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18705,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1652,
+								1652
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1200.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "countrylist.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4839,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2232,
+								2232
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1475.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 197,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								197
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Departure Sat, Jul 21",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 221.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 50.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.876605376199,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.autopep8":
+	{
+		"height": 144.0
+	},
+	"output.exec":
+	{
+		"height": 244.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 232.0
+	},
+	"pinned_build_system": "",
+	"project": "datascrapper.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Dropbox/new school/Methodology/TEX/library.bib"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
