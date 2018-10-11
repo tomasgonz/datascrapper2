@@ -48,39 +48,19 @@
 	"buffers":
 	[
 		{
-			"file": "ldcs/groups.py",
+			"file": "/C/Users/Tomas.Gonzalez/.ssh/id_rsa",
 			"settings":
 			{
-				"buffer_size": 872,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"buffer_size": 1675,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "countries_data.py",
+			"file": "/C/Users/Tomas.Gonzalez/.ssh/id_rsa.pub",
 			"settings":
 			{
-				"buffer_size": 18705,
-				"encoding": "UTF-8",
+				"buffer_size": 417,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "countrylist.py",
-			"settings":
-			{
-				"buffer_size": 4839,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "Departure Sat, Jul 21\nIberia 6252\nNew York (JFK)\n8:50pm\nTerminal: 4S\nIberia 3946 operated by IBERIA EXPRESS AIRLINE\nMadrid (MAD)\n11:25am\nTerminal: 4\n\tflight to \t\nSanta Cruz de Tenerife (TFN)\n1:15pm",
-			"settings":
-			{
-				"buffer_size": 197,
-				"line_ending": "Windows",
-				"name": "Departure Sat, Jul 21"
 			}
 		}
 	],
@@ -213,6 +193,11 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Tomas.Gonzalez/.ssh/config",
+		"/C/Users/Tomas.Gonzalez/OneDrive - United Nations/datascrapper2/ldcs/groups.py",
+		"/C/Users/Tomas.Gonzalez/OneDrive - United Nations/datascrapper2/countries_data.py",
+		"/C/Users/Tomas.Gonzalez/OneDrive - United Nations/datascrapper2/countrylist.py",
+		"/C/Users/Tomas.Gonzalez/.ssh/id_rsa.pub",
 		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/countries_data.py",
 		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/data/Frame.py",
 		"/C/Users/Tomas.Gonzalez/OneDrive - United Nations/publications.html",
@@ -346,103 +331,16 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "ldcs/groups.py",
+					"file": "/C/Users/Tomas.Gonzalez/.ssh/id_rsa",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 872,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								427,
-								427
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "countries_data.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18705,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1652,
-								1652
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1200.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "countrylist.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4839,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2232,
-								2232
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1475.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 197,
+						"buffer_size": 1675,
 						"regions":
 						{
 						},
@@ -450,19 +348,46 @@
 						[
 							[
 								0,
-								197
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "Departure Sat, Jul 21",
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 221.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Tomas.Gonzalez/.ssh/id_rsa.pub",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 417,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								417
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
