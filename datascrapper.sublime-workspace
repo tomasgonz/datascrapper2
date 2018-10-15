@@ -48,19 +48,11 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/Tomas.Gonzalez/.ssh/id_rsa",
+			"file": "Pipfile",
 			"settings":
 			{
-				"buffer_size": 1675,
+				"buffer_size": 173,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Tomas.Gonzalez/.ssh/id_rsa.pub",
-			"settings":
-			{
-				"buffer_size": 417,
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -193,11 +185,12 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Tomas.Gonzalez/.ssh/id_rsa.pub",
+		"/C/Users/Tomas.Gonzalez/.ssh/id_rsa",
 		"/C/Users/Tomas.Gonzalez/.ssh/config",
 		"/C/Users/Tomas.Gonzalez/OneDrive - United Nations/datascrapper2/ldcs/groups.py",
 		"/C/Users/Tomas.Gonzalez/OneDrive - United Nations/datascrapper2/countries_data.py",
 		"/C/Users/Tomas.Gonzalez/OneDrive - United Nations/datascrapper2/countrylist.py",
-		"/C/Users/Tomas.Gonzalez/.ssh/id_rsa.pub",
 		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/countries_data.py",
 		"/C/Users/Tomas.Gonzalez/Dropbox/Coding/datascrapper2/data/Frame.py",
 		"/C/Users/Tomas.Gonzalez/OneDrive - United Nations/publications.html",
@@ -336,19 +329,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/Tomas.Gonzalez/.ssh/id_rsa",
-					"semi_transient": false,
+					"file": "Pipfile",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1675,
+						"buffer_size": 173,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								138,
+								138
 							]
 						],
 						"settings":
@@ -360,34 +353,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/Tomas.Gonzalez/.ssh/id_rsa.pub",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 417,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								417
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
