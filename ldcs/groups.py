@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 import sources
-from countrylist import CountryList
+from countries.list import CountryList
 from data.Frame import Frame
 from data.Row import Row
 from data.Cell import Cell

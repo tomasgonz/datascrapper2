@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 jupyter = "*"
 pymongo = "*"
+pandas = "*"
+xlsxwriter = "*"
+texttable = "*"
 
 [dev-packages]
 
