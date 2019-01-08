@@ -30,11 +30,13 @@ def get_datasets():
         dset.FileLocation = d['FileLocation']
     
         datasets.append(dset)
-
-        return datasets
+    
+    return datasets
     
 def print_datasets():
     i = 0
     for d in datasets:
         i = i + 1
-        print("%s %s" % (i, d.DatasetName))
+        print("-----------------------")
+        print("%s %s \n\n %s \n\n %s" % (i, d.DatasetName, d.DatasetDescription, d.FileLocation))
+        print("-----------------------")

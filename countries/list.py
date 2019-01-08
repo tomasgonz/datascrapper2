@@ -62,9 +62,24 @@ class CountryList(list):
 	def add_country_groupings(self):
 		add_group('LDCs', ldcs_all_names)
 
+	def get_country_names(self, ctrs):
+		names = []
+		for c in ctrs:
+			names.append(c.name)
+		
+		return(names)
+
+	def get_country_names_and_aliases(self, ctrs):
+		names = []
+		for c in ctrs:
+			names.append(c.name)
+			for i in c.alias:
+				names.append(i)
+		return(names)
+
 	# Add group information to country in list
 	# based on data stored in lists
-	def checkgroup(self, country):
+	def get_country_groups(self, country):
 
 		groups = []
 
@@ -112,8 +127,17 @@ class CountryList(list):
 
 		return groups
 
+	# Check if a country belongs to a group
+	def check_country(self, country):
+		for c in self:
+			if c.name == country or country in c.groups:
+				return True 
+		
+		return False
+
+
 	# Check if a country belongs to a region
-	def checkregion(self, country):
+	def check_region(self, country):
 
 		if country in africa:
 			return "Africa"
@@ -213,8 +237,8 @@ class CountryList(list):
 			c.capital_longitude = item['longitude']
 			c.capital_latitude = item['latitude']
 			c.lendingtype = item['lendingType']['value']
-			c.groups = self.checkgroup(c.name)
-			c.region = self.checkregion(c.name)
+			c.groups = self.get_country_groups(c.name)
+			c.region = self.check_region(c.name)
 
 			self.append(c)
 

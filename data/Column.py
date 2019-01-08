@@ -30,3 +30,11 @@ class Column():
 					result = float(result) + float(c.value.value)		
 		return result
 
+	def get_unique_values(self):
+		values = []
+		for c in self.cells:
+			if (c.get_value() not in values):
+				values.append(c.get_value())
+		
+		return (values)
+

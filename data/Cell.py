@@ -34,14 +34,14 @@ class Cell:
 		except ValueError:
 			return False
 
-	def set(self, v):		
+	def set_value(self, v):		
 
 		if self.is_number(v):			
 			self.value.set(float(v))
 		else:
 			self.value.set(v)
 		
-	def get(self):
+	def get_value(self):
 		return self.value.get()
 
 	def print(self, kwargs):				

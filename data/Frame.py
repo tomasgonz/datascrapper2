@@ -28,6 +28,14 @@ class Frame:
 			c.cells.append(r.get_by_column_name(column_name))
 		return c
 
+	def get_unique_values(self, column_name):
+		values = []
+		for r in self.rows:
+			if (r.get_by_column_name(column_name).value.value not in values):
+				values.append(r.get_by_column_name(column_name).value.value)
+		
+		return (values)
+
 	def get_columns(self):
 		self.columns = []
 
@@ -62,7 +70,7 @@ class Frame:
 			nc.name = key			
 
 			ncell = Cell()
-			ncell.set(r[key])			
+			ncell.set_value(r[key])			
 			
 			ncell.column=nc
 			nr.cells.append(ncell)
@@ -90,9 +98,7 @@ class Frame:
 		table.add_row(self.column_names())						
 		for r in self.rows:
 			table.add_row(r.get_array())
-		
-		# table.set_cols_dtype(["t", "f"])
-		# table.set_cols_align(["l", "r"])
+			
 		table.set_cols_width(cols_width)
 		
 		print(table.draw())
