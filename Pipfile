@@ -9,6 +9,10 @@ pymongo = "*"
 pandas = "*"
 xlsxwriter = "*"
 texttable = "*"
+pexpect = "*"
+numpy = "*"
+requests = "*"
+zipfile = "*"
 
 [dev-packages]
 

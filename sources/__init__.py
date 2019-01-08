@@ -2,6 +2,7 @@ import sources.worldbank
 import sources.undp
 import sources.imf
 import sources.comtrade
+import sources.fao
 
 __all__ = ["worldbank", "undp", "imf", "comtrade"]
 

@@ -2,7 +2,6 @@ import urllib.request
 import json
 from countries.country import Country
 import pickle
-import sources.
 
 from countries.data import ldcs2018, ldcs2017, mics, mics_lower, \
 	mics_upper, oecd, sids, africa, asia, \
