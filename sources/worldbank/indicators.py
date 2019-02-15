@@ -17,10 +17,8 @@ def get(**kwargs):
     ----------
     name : string
         Name of the indicator to Download
-    start : string
-        Starting of the series
-    end: string
-        End of the series
+    years : string
+        Number of years
     countries: array
         List of countries to filter
 
@@ -36,7 +34,7 @@ def get(**kwargs):
     date = ''
 
     iso2 = ''
-  
+
     # Get countries
     if 'countries' in kwargs:
         ctrs = kwargs["countries"]
@@ -57,9 +55,10 @@ def get(**kwargs):
     url = url + "?format=JSON&per_page=" + str(per_page)
 
     # Get dates
-    if str(kwargs['start']):
-        if str(kwargs['end']):
-            date = str(kwargs['start']) + ":" + str(kwargs['end'])
+    years = kwargs['years']
+    years.sort()
+
+    date = str(years[0]) + ":" + str(years[len(years)-1])
 
     if date != '':
         url = url + "&date=" + date
@@ -85,29 +84,26 @@ def get(**kwargs):
                 'description': str(dd[1][0]['indicator']['value']),
                 'source': 'World Bank',
                 'sourceurl': 'http://data.worldbank.org/indicator/' + dd[1][0]['indicator']['id'],
-                'start': kwargs['start'],
-                'end': kwargs['end'],
+                'years': kwargs['years'],
                 'data': data}
 
     except ValueError:
-        pass    
+        pass
 
     return indicator
 
 def get_data_frame(**kwargs):
-    
+
     df = Frame.Frame()
 
     _name = str(kwargs["name"])
 
-    data = get(name=_name, start=str(kwargs["start"]), 
-        end=str(kwargs["end"]), 
+    data = get(name=_name, years=kwargs["years"],
         countries=kwargs['countries'])
-    
     data_array = []
-    
+
     for item in data['data']:
-        df.add_row(item)            
+        df.add_row(item)
 
     return df
 
@@ -115,13 +111,12 @@ def get_data_frame_wide(**kwargs):
 
     _name = str(kwargs["name"])
 
-    df = get_data_frame(name=_name, 
-        start=str(kwargs["start"]), 
-        end=str(kwargs["end"]), 
-        countries=kwargs['countries'])        
+    df = get_data_frame(name=_name,
+        years=kwargs["years"],
+        countries=kwargs['countries'])
 
-    dfw = df.wide(kwargs['label_field'], 
-        kwargs['value_field'], 
+    dfw = df.wide(kwargs['label_field'],
+        kwargs['value_field'],
         kwargs['column_field'])
 
     return dfw

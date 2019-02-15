@@ -2,8 +2,9 @@ import urllib.request
 import json
 from countries.country import Country
 import pickle
+import sources
 
-from countries.data import ldcs2018, ldcs2017, mics, mics_lower, \
+from countries.data import ldcs2025, ldcs2018, ldcs2017, mics, mics_lower, \
 	mics_upper, oecd, sids, africa, asia, \
 	america, north_america, central_america, south_america, \
 	europe, oecd, pacific_islands, asia_and_the_pacific, \
@@ -13,11 +14,11 @@ from countries.data import ldcs2018, ldcs2017, mics, mics_lower, \
 class CountryList(list):
 
 	def get_country_by_name(self, n):
-		
+
 		for c in self:
 			if n == c.name or n in c.alias:
 				return c
-		
+
 		return None
 
 	def get_countries_as_iso2_list(self, countries):
@@ -33,16 +34,6 @@ class CountryList(list):
 			if (self.get_iso3_from_country_name(country) != None):
 				iso3_list.append(self.get_iso3_from_country_name(country))
 		return iso3_list
-
-	def get_iso2_from_country_name(self, country):
-		for c in self:
-			if c.name == country:
-				return c.iso2code
-
-	def get_iso3_from_country_name(self, country):
-		for c in self:
-			if c.name == country:
-				return c.iso3code
 
 	def get_country_from_iso2(self, iso2code):
 		for c in self:
@@ -66,7 +57,7 @@ class CountryList(list):
 		names = []
 		for c in ctrs:
 			names.append(c.name)
-		
+
 		return(names)
 
 	def get_country_names_and_aliases(self, ctrs):
@@ -82,6 +73,9 @@ class CountryList(list):
 	def get_country_groups(self, country):
 
 		groups = []
+
+		if country in ldcs2025:
+			groups.append("LDCs2025")
 
 		if country in ldcs2018:
 			groups.append("LDCs")
@@ -131,8 +125,8 @@ class CountryList(list):
 	def check_country(self, country):
 		for c in self:
 			if c.name == country or country in c.groups:
-				return True 
-		
+				return True
+
 		return False
 
 
@@ -194,7 +188,7 @@ class CountryList(list):
 	# Get group of countries
 	def get_groups(self, g):
 		ctrs = []
-		for c in self:          			
+		for c in self:
 			if set(g).issubset(c.groups):
 				ctrs.append(c)
 
@@ -206,17 +200,17 @@ class CountryList(list):
 		ctrs = []
 		for c in self:
 			if g in c.groups:
-				ctrs.append(c.name)     
+				ctrs.append(c.name)
 		return ctrs
 
 	def set_country_alias(self, c, a):
-		for ctry in self:				
+		for ctry in self:
 			if ctry.name == c:
 				ctry.alias = a
 
 	def load_country_alias(self):
-		for k in country_alias:			
-			self.set_country_alias(k,country_alias[k])	
+		for k in country_alias:
+			self.set_country_alias(k,country_alias[k])
 
 	def load_wb(self):
 		# Load country data from the worldbank
@@ -248,3 +242,11 @@ class CountryList(list):
 		# Save to disk
 		pkl = open("countries.pkl", "wb")
 		pickle.dump(c, pkl)
+
+	def load_fao_code(self):
+		sources.fao.data.load_countries()
+		print(sources.fao.data.countries.search('label', 'Angola').rows[0].get_by_column_name('label').get_value())
+		for ctr in self:
+			f_c = sources.fao.data.countries.search('label', ctr.name).rows[0].get_by_column_name('label').get_value()
+			print(f_c)
+			ctr.fao_code = f_c

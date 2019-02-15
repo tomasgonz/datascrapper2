@@ -1,5 +1,5 @@
 import sources.fao.data
-import sources.fao.dataset
+import sources.fao.utils
 
 name = "FAO"
 description = "Module to access data from data.fao.org"

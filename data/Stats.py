@@ -95,7 +95,7 @@ def calculate_weighted_average(df_data, df_weight, label_field):
 	dr = Row()
 	dr.add_cell(Cell(column=label_field, value='Average'))
 
-	for c in df_w.column_names():
+	for c in df_w.get_column_names():
 		total_weight = None
 		if df_weight.get_column(c).get_type() == 'number':
 			total_weight = df_w.get_column(c).sum()

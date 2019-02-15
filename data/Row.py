@@ -1,22 +1,22 @@
-class Row:	
-	
+class Row(list):
+
 	def __init__(self, **kwargs):
-		self.cells = []
+		self.cells = self
 
 	def add_cell(self, c):
 		self.cells.append(c)
 
-	def print(self):		
+	def print(self):
 		print (' '.join("|{}|".format(c.value.value) for c in self.cells))
 
 	def get_by_column_name(self, column_name):
 		for c in self.cells:
 			if c.column.name == column_name:
 				return c
-	
+
 	def get_array(self):
 		r = []
-		
+
 		for c in self.cells:
 			r.append(c.value.value)
 

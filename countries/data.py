@@ -21,6 +21,21 @@ country_alias = {
     'Iran' :['Iran (Islamic Republic of)', 'Islamic Republic of Iran']
     }
 
+ldcs2025 = {
+    'Angola', 'Benin', 'Burkina Faso', 'Burundi',
+    'Central African Republic', 'Chad', 'Comoros',
+    'Congo, Dem. Rep.', 'Djibouti',
+    'Eritrea', 'Ethiopia', 'Gambia, The', 'Guinea',
+    'Guinea-Bissau', 'Lesotho', 'Liberia', 'Madagascar',
+    'Malawi', 'Mali', 'Mauritania', 'Mozambique',
+    'Niger', 'Rwanda',
+    'Senegal', 'Sierra Leone', 'Somalia', 'South Sudan',
+    'Sudan', 'Togo', 'Tanzania', 'Uganda',
+    'Zambia', 'Afghanistan', 'Cambodia', 'Kiribati', 'Lao PDR',
+    'Myanmar', 'Nepal', 'Tuvalu', "Timor-Leste", 'Vanuatu',
+    'Yemen, Rep.', 'Haiti'
+}
+
 ldcs2018 = [
     'Angola', 'Benin', 'Burkina Faso', 'Burundi',
     'Central African Republic', 'Chad', 'Comoros',
@@ -183,18 +198,18 @@ developing_unsd = [
 
 developing_excluding_ldcs = [
     'Algeria',
-    'American Samoa', 
+    'American Samoa',
     'Anguilla',
-    'Antigua and Barbuda', 
+    'Antigua and Barbuda',
     'Argentina',
     'Armenia',
     'Aruba',
     'Azerbaijan',
     'Bahamas',
     'Bahrain',
-    'Barbados', 
+    'Barbados',
     'Belize',
-    'Bolivia', 
+    'Bolivia',
     'Bonaire, Sint Eustatius and Saba',
     'Botswana',
     'Brazil',
@@ -210,17 +225,17 @@ developing_excluding_ldcs = [
     'China, Macao Special Administrative Region',
     'Colombia',
     'Republic of Congo',
-    'Cook Islands', 
+    'Cook Islands',
     'Costa Rica',
     'C&#244;te d&#39;Ivoire' ,
     'Cuba',
-    'Cura&#231;ao', 
-    'Cyprus', 
+    'Cura&#231;ao',
+    'Cyprus',
     'Democratic People&#39;s Republic of Korea',
     'Dominica',
     'Dominican Republic',
     'Ecuador',
-    'Equatorial Guinea', 
+    'Equatorial Guinea',
     'Egypt',
     'El Salvador',
     'Falkland Islands (Malvinas)',
@@ -238,7 +253,7 @@ developing_excluding_ldcs = [
     'Guyana',
     'Honduras',
     'India',
-    'Indonesia', 
+    'Indonesia',
     'Iran',
     'Iraq',
     'Israel',
@@ -331,7 +346,7 @@ africa = [
     'Niger', 'Nigeria', 'Rwanda', 'Saint Helena', 'Sao Tome and Principe',
     'Senegal', 'Seychelles', 'Sierra Leone', 'Somalia', 'Somaliland', 'South Africa',
     'South Sudan', 'Sudan', 'Swaziland', 'Tanzania', 'Togo', 'Tunisia',
-    'Uganda', 'Western Sahara', 'Zambia', 'Zimbabwe', 'British Indian Ocean Territory'] 
+    'Uganda', 'Western Sahara', 'Zambia', 'Zimbabwe', 'British Indian Ocean Territory']
 
 eastern_africa = [
     'Burundi', 'Comoros', 'Djibouti', 'Eritrea', 'Ethiopia', 'Kenya',
@@ -375,7 +390,7 @@ asia = [
     'Yemen, Rep.', 'Hong Kong', 'Macau']
 
 pacific_islands = [
-    'Fiji', 'Kiribati', 'Marshall Islands', 
+    'Fiji', 'Kiribati', 'Marshall Islands',
     'Micronesia, Federated States of', 'Nauru', 'Palau',
     'Samoa', 'Solomon Islands', 'Tonga', 'Tuvalu', 'Vanuatu'
     ]
