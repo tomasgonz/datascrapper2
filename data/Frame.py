@@ -1,4 +1,5 @@
 from data.Column import Column
+from data.Columns import Columns
 from data.Row import Row
 from data.Cell import Cell
 import xlsxwriter
@@ -10,7 +11,7 @@ class Frame(list):
 	def __init__(self):
 		self.rows = self
 		self.name = ""
-		self.columns = []
+		self.columns = Columns()
 
 	def __repr__(self):
 		return self.print()
@@ -22,8 +23,8 @@ class Frame(list):
 	# Return columns of the dataset
 	def get_column_names(self):
 		cols = []
-		r = self.rows[0]
-		for c in r.cells:
+		r = self[0]
+		for c in r:
 			cols.append(c.column.name)
 		return cols
 
@@ -31,13 +32,13 @@ class Frame(list):
 	def get_column(self, column_name):
 		c = Column()
 		c.name = column_name
-		for r in self.rows:
-			c.cells.append(r.get_by_column_name(column_name))
+		for r in self:
+			c.append(r.get_by_column_name(column_name))
 		return c
 
 	def get_unique_values(self, column_name):
 		values = []
-		for r in self.rows:
+		for r in self:
 			if (r.get_by_column_name(column_name).value.value not in values):
 				values.append(r.get_by_column_name(column_name).value.value)
 
@@ -52,19 +53,19 @@ class Frame(list):
 		return self.columns
 
 	def add_column(self, c):
-		if len(c.cells) != len(self.rows) and len(self.rows) != 0:
+		if len(c) != len(self) and len(self) != 0:
 			print ('Length of dataset not equal')
 			return False
 
-		if len(self.rows) == 0:
-			for cell in c.cells:
+		if len(self) == 0:
+			for cell in c:
 				dr = Row()
-				dr.cells.append(cell)
-				self.rows.append(dr)
+				dr.append(cell)
+				self.append(dr)
 		else:
 			i = 0
-			for cell in c.cells:
-				self.rows[i].cells.append(cell)
+			for cell in c:
+				self[i].append(cell)
 				i = i + 1
 
 		return True
@@ -81,13 +82,13 @@ class Frame(list):
 			ncell.set_value(r[key])
 
 			ncell.column=nc
-			nr.cells.append(ncell)
+			nr.append(ncell)
 
-		self.rows.append(nr)
+		self.append(nr)
 
 	def get_unique_values(self, column_name):
 		values = []
-		for r in self.rows:
+		for r in self:
 			if (r.get_by_column_name(column_name).value.value not in values):
 				values.append(r.get_by_column_name(column_name).value.value )
 
@@ -102,7 +103,7 @@ class Frame(list):
 			cols_width.append(10)
 
 		table.add_row(self.get_column_names())
-		for r in self.rows:
+		for r in self:
 			table.add_row(r.get_array())
 
 		table.set_cols_width(cols_width)
@@ -118,10 +119,10 @@ class Frame(list):
 
 		df = Frame()
 
-		for r in self.rows:
-			for c in r.cells:
+		for r in self:
+			for c in r:
 				if c.column.name == field and c.value.value == values:
-					df.rows.append(r)
+					df.append(r)
 
 		return df
 
@@ -134,8 +135,8 @@ class Frame(list):
 		# Store entity name
 		row_labels = []
 		# Capture different column and entity names
-		for r in self.rows:
-			for c in r.cells:
+		for r in self:
+			for c in r:
 				if c.column.name == column_field and c.value.value not in cols:
 					cols.append(c.value.value)
 				if c.column.name == label_field and c.value.value not in row_labels:
@@ -147,13 +148,13 @@ class Frame(list):
 		#Create rows in wide format
 		for r in row_labels:
 			nr = Row()
-			nr.cells.append(Cell(column=label_field,value=r))
+			nr.append(Cell(column=label_field,value=r))
 
 			# Search for cells of entity and value
 			rr = self.search(label_field, r)
-			for rrr in rr.rows:
+			for rrr in rr:
 				ncc = Cell()
-				for c in rrr.cells:
+				for c in rrr:
 					if c.column.name == column_field:
 						ncc.column.name = c.value.value
 
@@ -162,15 +163,15 @@ class Frame(list):
 
 				nr.add_cell(ncc)
 
-			ndf.rows.append(nr)
+			ndf.append(nr)
 
 		return ndf
 
 	def merge(self, data_frames):
 		ndf = Frame()
 		for df in data_frames:
-			for r in df.rows:
-				ndf.rows.append(r)
+			for r in df:
+				ndf.append(r)
 		return ndf
 
 	# Save the dataset to excel
@@ -191,9 +192,9 @@ class Frame(list):
 		ws.set_row(0,j,format)
 
 		i = 2
-		for r in self.rows:
+		for r in self:
 		    j=0
-		    for c in r.cells:
+		    for c in r:
 		        ws.write(i,j, c.value.get())
 		        j=j+1
 

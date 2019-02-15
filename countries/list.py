@@ -3,6 +3,7 @@ import json
 from countries.country import Country
 import pickle
 import sources
+from texttable import Texttable
 
 from countries.data import ldcs2025, ldcs2018, ldcs2017, mics, mics_lower, \
 	mics_upper, oecd, sids, africa, asia, \
@@ -13,12 +14,23 @@ from countries.data import ldcs2025, ldcs2018, ldcs2017, mics, mics_lower, \
 
 class CountryList(list):
 
-	def get_country_by_name(self, n):
+	# prints the dataframe
+	def print(self, **kwargs):
 
+		cols_width = []
+		table = Texttable()
+		for r in self:
+			table.add_row(r.as_array())
+		table_s = table.draw()
+		return(table_s)
+
+	def __repr__(self):
+		self.print()
+
+	def get_country_by_name(self, n):
 		for c in self:
 			if n == c.name or n in c.alias:
 				return c
-
 		return None
 
 	def get_countries_as_iso2_list(self, countries):
@@ -129,7 +141,6 @@ class CountryList(list):
 
 		return False
 
-
 	# Check if a country belongs to a region
 	def check_region(self, country):
 
@@ -179,7 +190,6 @@ class CountryList(list):
 	# Return country names as json
 	def as_json(self):
 		ctrs = {}
-
 		for w in self:
 			ctrs[w.name] = w.as_json()
 
@@ -245,8 +255,13 @@ class CountryList(list):
 
 	def load_fao_code(self):
 		sources.fao.data.load_countries()
-		print(sources.fao.data.countries.search('label', 'Angola').rows[0].get_by_column_name('label').get_value())
 		for ctr in self:
 			f_c = sources.fao.data.countries.search('label', ctr.name).rows[0].get_by_column_name('label').get_value()
 			print(f_c)
 			ctr.fao_code = f_c
+
+	def load_sdg_code(self):
+		areas = sources.sdgs.areas.load_areas()
+		for a in areas:
+			if (self.get_country_by_name(a.get_by_column_name('geoAreaName').get_value()) is not None):
+				self.get_country_by_name(a.get_by_column_name('geoAreaName').get_value()).sdg_code = a.get_by_column_name('geoAreaCode').get_value()

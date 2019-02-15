@@ -3,8 +3,8 @@ from data.Column import Column
 from data.Value import Value
 
 class Cell:
-	
-	def __init__(self, **kwargs):				
+
+	def __init__(self, **kwargs):
 
 		self.column = Column()
 		self.value  = Value()
@@ -21,28 +21,31 @@ class Cell:
 			if kwargs['value'] == "n/a":
 				self.value.value = None
 				return
-			
+
 			self.value.value = kwargs['value']
-	
+
+	def __repr__(self):
+		return str(self.get_value())
+
 	def is_number(self, s):
 
-		if s is None: 
-			return False					
+		if s is None:
+			return False
 		try:
 			float(s)
 			return True
 		except ValueError:
 			return False
 
-	def set_value(self, v):		
+	def set_value(self, v):
 
-		if self.is_number(v):			
+		if self.is_number(v):
 			self.value.set(float(v))
 		else:
 			self.value.set(v)
-		
+
 	def get_value(self):
 		return self.value.get()
 
-	def print(self, kwargs):				
+	def print(self, kwargs):
 		print (self.value.get())

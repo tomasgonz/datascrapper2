@@ -28,11 +28,9 @@ def get(**kwargs):
         Return an object containing metadata as well as data retrieved
 
     """
-
+    
     id = str(kwargs["name"])
-
     date = ''
-
     iso2 = ''
 
     # Get countries
