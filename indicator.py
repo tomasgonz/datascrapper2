@@ -6,6 +6,7 @@ class Indicator:
 	note = ''
 	datasource = ''
 	url = ''
+	source_metadata = ''
 	data = {}
 
 	def as_json(self):
@@ -17,6 +18,5 @@ class Indicator:
 			note=self.note,
 			datasource=self.datasource,
 			url=self.url,
+			source_metadata = self.source_metadata,
 			data=self.data)
-
-
