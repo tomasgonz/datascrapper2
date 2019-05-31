@@ -4,9 +4,9 @@ from data.Cell import Cell
 from data.Utils import is_number
 
 def calculate_weighted_average(df_data, df_weight, label_field):
-	
+
 	df_w = Frame()
-	
+
 	# Go through all data rows
 	for d in df_data.rows:
 		dr = Row()
@@ -46,7 +46,7 @@ def calculate_weighted_average(df_data, df_weight, label_field):
 
 				dr.add_cell(Cell(column="%s_%s" %
 								 (c.column.name, 'weighted_value'), value = None))
-			
+
 		# We add a column where the weighted value will be stored
 		df_w.rows.append(dr)
 
@@ -63,15 +63,15 @@ def calculate_weighted_average(df_data, df_weight, label_field):
 
 				# Check if weight value exists for data point
 				if len(df_weight.search(label_field, d.get_by_column_name(label_field).value.value).rows) > 0:
-					
-					if c.value.value is not None and df_weight.search(label_field, 
-						d.get_by_column_name(label_field).value.value).rows[0].get_by_column_name(c.column.name).value.value is not None:						
-						
+
+					if c.value.value is not None and df_weight.search(label_field,
+						d.get_by_column_name(label_field).value.value).rows[0].get_by_column_name(c.column.name).value.value is not None:
+
 						data_value = c.value.value
-																				
-					weight_value = df_weight.search(label_field, 
-						d.get_by_column_name(label_field).value.value).rows[0].get_by_column_name(c.column.name).value.value 
-					
+
+					weight_value = df_weight.search(label_field,
+						d.get_by_column_name(label_field).value.value).rows[0].get_by_column_name(c.column.name).value.value
+
 					total_weight = df_w.get_column("%s_%s" % (c.column.name, 'weight')).sum()
 
 					if data_value is not None and weight_value is not None:
@@ -81,14 +81,14 @@ def calculate_weighted_average(df_data, df_weight, label_field):
 						else:
 							weighted_value = None
 					else:
-						
-						weighted_value = None		
+
+						weighted_value = None
 
 				# If weight value does not exists for the data point
 				else:
 					weighted_value = None
-				
-				df_w.search(label_field, 
+
+				df_w.search(label_field,
 					d.get_by_column_name(label_field).value.value).rows[0].get_by_column_name("%s_%s" % (c.column.name, 'weighted_value')).value.value = weighted_value
 
 
@@ -104,8 +104,3 @@ def calculate_weighted_average(df_data, df_weight, label_field):
 	df_w.rows.append(dr)
 
 	return df_w
-
-
-
-
-

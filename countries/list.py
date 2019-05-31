@@ -264,4 +264,4 @@ class CountryList(list):
 		areas = sources.sdgs.areas.load_areas()
 		for a in areas:
 			if (self.get_country_by_name(a.get_by_column_name('geoAreaName').get_value()) is not None):
-				self.get_country_by_name(a.get_by_column_name('geoAreaName').get_value()).sdg_code = a.get_by_column_name('geoAreaCode').get_value()
+				self.get_country_by_name(a.get_by_column_name('geoAreaName').get_value()).sdg_code = str(a.get_by_column_name('geoAreaCode').get_value()).split(".")[0]
