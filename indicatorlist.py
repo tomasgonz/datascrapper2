@@ -23,13 +23,12 @@ class IndicatorList(list):
 
 		self.append(indicator)
 
-
 	def as_json():
 
 		arr = {}
 
 		j = 0
-		
+
 		for indicator in self:
 			j = j + 1
 			arr[str(j)] = indicator.as_json()
@@ -50,7 +49,7 @@ class IndicatorList(list):
 	def load_from_disk():
 		with open('indicators.json', 'r') as f:
 			data = json.loads(f)
-			
+
 		for i in data:
 			print(i)
 			ind = Indicator()
@@ -61,4 +60,3 @@ class IndicatorList(list):
 			ind.datasource = i['datasource']
 			ind.url=i['url']
 			ind.data=i['data']
-	

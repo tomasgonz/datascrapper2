@@ -12,7 +12,6 @@ texttable = "*"
 pexpect = "*"
 numpy = "*"
 requests = "*"
-zipfile = "*"
 
 [dev-packages]
 
