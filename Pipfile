@@ -12,6 +12,7 @@ texttable = "*"
 pexpect = "*"
 numpy = "*"
 requests = "*"
+bokeh = "*"
 
 [dev-packages]
 
