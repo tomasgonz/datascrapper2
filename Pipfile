@@ -13,6 +13,7 @@ pexpect = "*"
 numpy = "*"
 requests = "*"
 bokeh = "*"
+jupyterlab = "*"
 
 [dev-packages]
 
