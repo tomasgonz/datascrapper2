@@ -14,6 +14,20 @@ from countries.data import ldcs2025, ldcs2018, ldcs2017, mics, mics_lower, \
 
 class CountryList(list):
 
+	def __init__(self):
+		pass
+
+	def __iter__(self):
+		self.idx = 0
+		return self
+
+	def __next__(self):
+		if self.idx < len(self):
+			self.idx += 1
+			return self[self.idx - 1]
+		else:
+			raise StopIteration
+
 	# prints the dataframe
 	def print(self, **kwargs):
 
