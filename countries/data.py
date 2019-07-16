@@ -500,4 +500,4 @@ antarctica = ['South Georgia and South Sandwich Islands',
               'French Southern and Antarctic Lands', 'Antarctica',
               'Heard Island and McDonald Islands']
 
-world = europe + asia + america + antarctica + africa
+world = europe + asia_and_the_pacific + america + antarctica + africa
