@@ -29,3 +29,6 @@ class Row(list):
 				result_cells.append(c)
 
 		return result_cells
+
+	def to_json():
+		
