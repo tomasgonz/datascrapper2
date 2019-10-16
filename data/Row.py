@@ -31,4 +31,5 @@ class Row(list):
 		return result_cells
 
 	def to_json():
-		
+		pass
+	
