@@ -20,6 +20,9 @@ class Frame(list):
 	def get_row(self, i):
 		return(self.rows[i])
 
+	def get_last_row(self):
+		return(self.rows[len(self.rows)-1])
+
 	# Return columns of the dataset
 	def get_column_names(self):
 		cols = []
@@ -78,21 +81,13 @@ class Frame(list):
 			nc = Column()
 			nc.name = key
 
-			ncell = Cell()
-			ncell.set_value(r[key])
+			n_cell = Cell()
+			n_cell.set_value(r[key])
 
-			ncell.column=nc
-			nr.append(ncell)
+			n_cell.column=nc
+			nr.append(n_cell)
 
 		self.append(nr)
-
-	def get_unique_values(self, column_name):
-		values = []
-		for r in self:
-			if (r.get_by_column_name(column_name).value.value not in values):
-				values.append(r.get_by_column_name(column_name).value.value )
-
-		return values
 
 	# prints the dataframe
 	def print(self, **kwargs):

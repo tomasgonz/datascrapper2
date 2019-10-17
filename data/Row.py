@@ -9,6 +9,18 @@ class Row(list):
 	def print(self):
 		print (' '.join("|{}|".format(c.value.value) for c in self.cells))
 
+	def get_columns(self):
+		cs = []
+		for c in self.cells:
+			cs.append(c.column)
+		return cs
+
+	def get_column_names(self):
+		cs = []
+		for c in self.cells:
+			cs.append(c.column.name)
+		return cs
+
 	def get_by_column_name(self, column_name):
 		for c in self.cells:
 			if c.column.name == column_name:
@@ -30,6 +42,6 @@ class Row(list):
 
 		return result_cells
 
-	def to_json():
+	def to_json(self):
 		pass
 	
