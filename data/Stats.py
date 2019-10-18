@@ -103,4 +103,9 @@ def calculate_weighted_average(df_data, df_weight, label_field):
 
 	df_w.rows.append(dr)
 
+	df_w.id = df_data.id + " - " + df_weight.id
+	df_w.description = df_data.description + " weighted against " + df_weight.description 
+	df_w.source = df_data.id + " : " + df_data.source + " and " + df_weight.id + " : " + df_weight.source
+	df_w.source_url = df_data.id + " : " + df_data.source_url + " and " + df_weight.id + " : " + df_weight.source_url
+
 	return df_w

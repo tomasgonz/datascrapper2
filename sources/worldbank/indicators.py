@@ -84,7 +84,6 @@ def get(**kwargs):
                 'sourceurl': 'http://data.worldbank.org/indicator/' + dd[1][0]['indicator']['id'],
                 'years': kwargs['years'],
                 'data': data}
-
     except ValueError:
         pass
         
@@ -98,11 +97,14 @@ def get_data_frame(**kwargs):
 
     data = get(name=_name, years=kwargs["years"],
         countries=kwargs['countries'])
-    data_array = []
-
+   
     for item in data['data']:
         df.add_row(item)
-
+    
+    df.id = data['name']
+    df.description = data['description']
+    df.source = data['source']
+    df.source_url = data['sourceurl']
     return df
 
 def get_data_frame_wide(**kwargs):
@@ -116,6 +118,12 @@ def get_data_frame_wide(**kwargs):
     dfw = df.wide(kwargs['label_field'],
         kwargs['value_field'],
         kwargs['column_field'])
+
+    dfw.name = df.name
+    dfw.id = df.id
+    dfw.description = df.description
+    dfw.source = df.source
+    dfw.source_url = df.source_url
 
     return dfw
 

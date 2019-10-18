@@ -11,6 +11,12 @@ class Frame(list):
 	def __init__(self):
 		self.rows = self
 		self.name = ""
+		self.description = ""
+		self.id = ""
+		self.source = ""
+		self.source_url = ""
+		self.entities_description = ""
+
 		self.columns = Columns()
 
 	def __repr__(self):
@@ -162,6 +168,12 @@ class Frame(list):
 				nr.add_cell(ncc)
 
 			ndf.append(nr)
+		
+		ndf.name = self.name
+		ndf.id = self.id
+		ndf.description = self.description
+		ndf.source = self.source
+		ndf.source_url = self.source_url
 
 		return ndf
 

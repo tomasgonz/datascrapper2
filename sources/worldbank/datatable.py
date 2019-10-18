@@ -5,8 +5,7 @@ from countries.list import CountryList
 c = CountryList()
 c.load_wb()
 
-from sources.worldbank.indicators import get_data_frame_wide as getdfw
-from sources.worldbank.indicators import get_data_frame as getdf
+from sources.worldbank.indicators import get_data_frame as get_df
 
 def get_data_table(years, indicator, groups, export_to_excel=False):
     # We will store the final result here
@@ -15,7 +14,7 @@ def get_data_table(years, indicator, groups, export_to_excel=False):
     # and also total
     for g in groups:
         # Data points
-        df_d = getdf(name=indicator,
+        df_d = get_df(name=indicator,
             years = years,
             countries=c.get_groups(g)
             )
@@ -42,5 +41,11 @@ def get_data_table(years, indicator, groups, export_to_excel=False):
 
     if export_to_excel == True:
         final_df.to_xlsx()
+
+    final_df.id = df_data.id
+    final_df.name = df_data.name
+    final_df.description = df_data.description
+    final_df.source = df_data.source
+    final_df.source_url = df_data.source_url
 
     return final_df
