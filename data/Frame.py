@@ -29,6 +29,12 @@ class Frame(list):
 	def get_last_row(self):
 		return(self.rows[len(self.rows)-1])
 
+	def get_total_by_column(self):
+		d = []
+		for c in self.get_columns():
+			d.append(c.sum())		
+		return(d)
+
 	# Return columns of the dataset
 	def get_column_names(self):
 		cols = []
