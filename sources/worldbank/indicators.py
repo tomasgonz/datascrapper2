@@ -17,7 +17,7 @@ def get(**kwargs):
     ----------
     name : string
         Name of the indicator to Download
-    years : string
+    years : array
         Number of years
     countries: array
         List of countries to filter
