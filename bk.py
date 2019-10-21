@@ -41,7 +41,7 @@ def line_chart(series, title):
         y = data[1]
         group = data[2]
         p.line(x, y, legend=group, line_width=2, color = colors[j])
-        p.circle(x, y, color=colors[j], fill_color=colors[j], line_width=3)
+        p.circle(x, y, color=colors[j], line_width=3)
         j = j + 1
     
     hover = HoverTool()

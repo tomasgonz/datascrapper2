@@ -17,6 +17,7 @@ jupyterlab = "*"
 plotly = "*"
 ipywidgets = "*"
 ptable = "*"
+jupyterthemes = "*"
 
 [dev-packages]
 pylint = "*"
