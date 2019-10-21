@@ -12,7 +12,6 @@ Indicators = IndicatorList()
 
 def get(**kwargs):
     # Get data and coordinate cache and retrieval
-
     p = get_file_path(kwargs['name'])
     if check_cache(p) == False:
         retrieve_and_cache(name=kwargs['name'])

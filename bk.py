@@ -13,6 +13,8 @@ from sources.worldbank.datatable import get_data_table
 import bokeh
 from bokeh.models import HoverTool
 from bokeh.plotting import figure, output_file, show, reset_output
+import pandas as pd
+import numpy as np
 
 def estimate(years,indicator, groups, weight = None):
     data_df = get_data_table(years, indicator, groups, export_to_excel=False)    
@@ -65,6 +67,8 @@ def show_weighted_average(years, indicator, weight, groups):
     series = datasets
     show(line_chart(series, series[0][3]))
 
+    return series
+
 def show_group_total(years, indicator, groups):
     datasets = []
     for group in groups:
@@ -77,3 +81,15 @@ def show_group_total(years, indicator, groups):
         datasets.append([x,y, group, data_group.description])
     series = datasets
     show(line_chart(series, series[0][3]))        
+
+def get_pandas_dataframe(series):
+    data = []
+
+    for item in series:
+        item[1].insert(0, str(item[2]))
+        data.append(item[1])
+
+    series[0][0].insert(0, 'Entity')
+    df = pd.DataFrame(data = data, columns = series[0][0])
+
+    return(df)

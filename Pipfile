@@ -16,6 +16,7 @@ bokeh = "*"
 jupyterlab = "*"
 plotly = "*"
 ipywidgets = "*"
+ptable = "*"
 
 [dev-packages]
 pylint = "*"
