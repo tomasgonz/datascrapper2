@@ -1,6 +1,7 @@
 import sources.worldbank.indicators
 import sources.worldbank.climate
 import sources.worldbank.datatable
+import sources.worldbank.cache
 
 __all__ = ["indicators"]
 

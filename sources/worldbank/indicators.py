@@ -3,91 +3,31 @@ import json
 from indicator import Indicator
 from data import Frame, Row, Column
 from indicatorlist import IndicatorList
+from sources.worldbank.cache import check_cache, load_cache
+from sources.worldbank.cache import retrieve_and_cache
 
 per_page = 30000
 
 Indicators = IndicatorList()
 
 def get(**kwargs):
-    """
-    Download data from the worldbank database
-
-
-    Parameters
-    ----------
-    name : string
-        Name of the indicator to Download
-    years : array
-        Number of years
-    countries: array
-        List of countries to filter
-
-    Returns
-    -------
-    object
-        Return an object containing metadata as well as data retrieved
-
-    """
+    # Get data and coordinate cache and retrieval
 
     id = str(kwargs["name"])
-    date = ''
-    iso2 = ''
 
-    # Get countries
-    if 'countries' in kwargs:
-        ctrs = kwargs["countries"]
-
-        for x in range(len(kwargs["countries"])):
-
-            if x != 0:
-                iso2 = iso2 + ";"
-
-            iso2 = iso2 + kwargs["countries"][x].iso2code
-
-    if iso2 != '':
-        url = "http://api.worldbank.org/countries/" + \
-            iso2 + "/indicators/" + id
-    else:
-        url = "http://api.worldbank.org/countries/all/indicators/" + id
-
-    url = url + "?format=JSON&per_page=" + str(per_page)
-
-    # Get dates
-    years = kwargs['years']
-    years.sort()
-
-    date = str(years[0]) + ":" + str(years[len(years)-1])
-
-    if date != '':
-        url = url + "&date=" + date
-
-    indicator = None
-
-    try:
-
-        response = urllib.request.urlopen(url)
-        dd = response.read().decode('utf-8')
-        dd = json.loads(dd)
-
-        data = []
-
-        if dd[1] != None:
-            for item in dd[1]:
-                i = {'entity': item['country'][
-                    'value'], 'date': item['date'], 'value': item['value']}
-                data.append(i)
-
-            indicator = {
-                'name': str(dd[1][0]['indicator']['id']).replace(".", ""),
-                'description': str(dd[1][0]['indicator']['value']),
-                'source': 'World Bank',
-                'sourceurl': 'http://data.worldbank.org/indicator/' + dd[1][0]['indicator']['id'],
-                'years': kwargs['years'],
-                'data': data}
-    except ValueError:
-        pass
-        
-    return indicator
+    p = 'data/' + kwargs['name'] + ".json" 
+    if check_cache(p) == False:
+        retrieve_and_cache(name=kwargs['name'])
+    cached_data = load_cache(p)
+    n_data = []
+    
+    for item in cached_data['data']:
+        if (item['entity'] in kwargs['countries']) and item['date'] in kwargs['years']:
+            n_data.append(item)
+    
+    cached_data['data'] = n_data
+    
+    return cached_data
 
 def get_data_frame(**kwargs):
 

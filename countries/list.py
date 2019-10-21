@@ -176,6 +176,14 @@ class CountryList(list):
 		if country in europe:
 			return "Europe"
 
+	def get_country_names_from_groups(self, groups):
+
+		ctrs = self.get_groups(groups)
+		country_names = []
+		for ctr in ctrs:
+			country_names.append(ctr.name)
+		
+		return country_names
 
 	# Return name of countries as a list
 	def get_List(self, cs):
@@ -208,7 +216,7 @@ class CountryList(list):
 			ctrs[w.name] = w.as_json()
 
 		return ctrs
-
+	
 	# Get group of countries
 	def get_groups(self, g):
 		ctrs = []
