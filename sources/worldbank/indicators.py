@@ -3,7 +3,7 @@ import json
 from indicator import Indicator
 from data import Frame, Row, Column
 from indicatorlist import IndicatorList
-from sources.worldbank.cache import check_cache, load_cache
+from sources.worldbank.cache import check_cache, load_cache, check_age, cache_folder, get_file_path
 from sources.worldbank.cache import retrieve_and_cache
 
 per_page = 30000
@@ -13,11 +13,11 @@ Indicators = IndicatorList()
 def get(**kwargs):
     # Get data and coordinate cache and retrieval
 
-    id = str(kwargs["name"])
-
-    p = 'data/' + kwargs['name'] + ".json" 
+    p = get_file_path(kwargs['name'])
     if check_cache(p) == False:
         retrieve_and_cache(name=kwargs['name'])
+    else:
+        check_age(kwargs['name'])
     cached_data = load_cache(p)
     n_data = []
     

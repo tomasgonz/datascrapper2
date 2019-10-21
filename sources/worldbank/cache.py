@@ -5,9 +5,17 @@ import os.path
 import time
 
 per_page = 30000
+cache_folder = 'data'
+# 604800 is on week
+max_age = 604800
+
+def get_file_path(name):
+    return str(cache_folder) + '/' + str(name) + '.json'
         
-def check_age(file_path):
-    return(os.path.getmtime(file_path) - time.time())
+def check_age(name):
+    if (os.path.getmtime(get_file_path(name)) - time.time()) < -max_age:
+        print("Updating " + str(name) + " from server.")
+        retrieve_and_cache(name)
 
 def check_cache(name):
     return (os.path.exists(name))
@@ -22,8 +30,8 @@ def load_cache(file_path):
         data = json.load(json_file)
         return (data)
 
-def retrieve_and_cache(**kwargs):
-    url = "http://api.worldbank.org/countries/all/indicators/" + str(kwargs['name']) + "?format=JSON&per_page=" + str(per_page)
+def retrieve_and_cache(name):
+    url = "http://api.worldbank.org/countries/all/indicators/" + str(name) + "?format=JSON&per_page=" + str(per_page)
                                                                      
     try:
 
@@ -48,5 +56,5 @@ def retrieve_and_cache(**kwargs):
             
     except ValueError:
         pass
-    f = 'data/' + kwargs['name'] + ".json"
+    f = get_file_path(name)
     write_cache(indicator, f)
