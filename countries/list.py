@@ -14,6 +14,12 @@ from countries.data import ldcs2025, ldcs2018, ldcs2017, lldcs, mics, mics_lower
 
 class CountryList(list):
 
+	def __new__(self):
+		if not hasattr(self, 'instance'):
+			self.instance = super().__new__(self)
+		
+		return self.instance
+
 	def __init__(self):
 		pass
 

@@ -134,10 +134,11 @@ class Frame(list):
 		return df
 
 	# Returns a dataframe in wide format
-	def wide(self, label_field, value_field, column_field):
+	def wide(self, label_field, value_field, column_field, export=False):
 		# Frame that we will use to return our results
 
-		self.to_xlsx()
+		if export == True:
+			self.to_xlsx()
 		
 		ndf = Frame()
 		# Store column names

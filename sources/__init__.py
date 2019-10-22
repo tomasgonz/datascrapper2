@@ -1,11 +1,12 @@
 import sources.worldbank
 import sources.undp
+import sources.unpd
 import sources.imf
 import sources.comtrade
 import sources.fao
 import sources.sdgs
 
-__all__ = ["worldbank", "undp", "imf", "comtrade", "sdgs"]
+__all__ = ["worldbank", "undp", "unsd", "imf", "comtrade", "sdgs"]
 
 def get(p):
 	if p == 'worldbank':
