@@ -5,7 +5,7 @@ import pickle
 import sources
 from texttable import Texttable
 
-from countries.data import ldcs2025, ldcs2018, ldcs2017, mics, mics_lower, \
+from countries.data import ldcs2025, ldcs2018, ldcs2017, lldcs, mics, mics_lower, \
 	mics_upper, oecd, sids, africa, asia, \
 	america, north_america, central_america, south_america, \
 	europe, oecd, pacific_islands, asia_and_the_pacific, \
@@ -108,15 +108,18 @@ class CountryList(list):
 
 		if country in ldcs2017:
 			groups.append("LDCs2017")
+		
+		if country in lldcs:
+			groups.append("LLDCs")
 
 		if country in mics:
 			groups.append("MICs")
 
 		if country in mics_lower:
-			groups.append("MICs Lower")
+			groups.append("LMICs")
 
 		if country in mics_upper:
-			groups.append("MICs Upper")
+			groups.append("UMICs")
 
 		if country in oecd:
 			groups.append("OECD")
@@ -176,6 +179,14 @@ class CountryList(list):
 		if country in europe:
 			return "Europe"
 
+	def get_country_names_from_groups(self, groups):
+
+		ctrs = self.get_groups(groups)
+		country_names = []
+		for ctr in ctrs:
+			country_names.append(ctr.name)
+		
+		return country_names
 
 	# Return name of countries as a list
 	def get_List(self, cs):
@@ -208,7 +219,7 @@ class CountryList(list):
 			ctrs[w.name] = w.as_json()
 
 		return ctrs
-
+	
 	# Get group of countries
 	def get_groups(self, g):
 		ctrs = []
