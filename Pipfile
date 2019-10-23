@@ -19,6 +19,8 @@ ipywidgets = "*"
 ptable = "*"
 jupyterthemes = "*"
 xlrd = "*"
+rise = "*"
+jupyter-contrib-nbextensions = "*"
 
 [dev-packages]
 pylint = "*"
