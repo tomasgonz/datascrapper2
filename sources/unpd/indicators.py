@@ -6,6 +6,7 @@ from countries.list import CountryList
 c = CountryList()
 c.load_wb()
 un_pop_proj_data_source = '../../data/UN_PPP2019_PopTot.xlsx'
+
 def load_data():
     df = pd.read_excel(un_pop_proj_data_source)
     df = df.rename(columns={'Region, subregion, country or area': 'entity'})
