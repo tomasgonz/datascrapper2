@@ -11,10 +11,11 @@ c.load_wb()
 from sources.worldbank.indicators import get_data_frame_wide as getdfw
 from sources.worldbank.datatable import get_data_table
 import bokeh
-from bokeh.models import HoverTool
+from bokeh.models import HoverTool, ColumnDataSource,  LabelSet, Label
 from bokeh.plotting import figure, output_file, show, reset_output
 import pandas as pd
 import numpy as np
+from colors import colors
 
 def estimate(years,indicator, groups, weight = None):
     data_df = get_data_table(years, indicator, groups, export_to_excel=False)    
@@ -27,12 +28,10 @@ def estimate(years,indicator, groups, weight = None):
     
     return (df_ldcs_w)
 
-
 def line_chart(series, title):
     # output_file("data.html")
     # create a new plot with a title and axis labels
-    p = figure(title=title, x_axis_label='Years', y_axis_label='Percentage', height = 400, width = 950)    
-    colors = ['red', 'blue', 'green', 'orange']
+    p = figure(title=title, x_axis_label='Years', y_axis_label='Percentage', height = 400, width = 950)        
     j = 0
     for data in series:                
         # output to static HTML file
@@ -45,7 +44,7 @@ def line_chart(series, title):
         j = j + 1
     
     hover = HoverTool()
-    hover.tooltips = """
+    hover.tooltips = """        
         <div style=padding=5px>Year:@x</div>
         <div style=padding=5px>Value:@y</div>
         """
@@ -53,6 +52,44 @@ def line_chart(series, title):
     p.legend.location = "bottom_left"
     
     return p
+
+def scatter_plot(x, y, radii, entities):
+
+    hover = HoverTool(names=entities, tooltips=[('entity', '@entity')])
+    TOOLS=hover
+
+    source = ColumnDataSource(data=dict(evi=x, hai=y, names=entities, 
+                                        radii=radii))
+
+    p = figure(title="HAI vs EVI", 
+            x_axis_label='EVI', 
+            y_axis_label='HAI', 
+            tools=["hover",], height = 600, width = 750)    
+
+    p.scatter(x='evi', y='hai', 
+            radius='radii', 
+            fill_alpha=0.6, 
+            line_color=None,
+            source=source)
+
+    labels = LabelSet(x='evi', y='hai', text='names', level='glyph',
+                x_offset=5, y_offset=5, source=source,  render_mode='canvas',text_font_size="8pt")
+    p.add_layout(labels)
+
+    return p
+
+def show_line_by_line(data)    
+    datasets = []
+    x = data.get_column_names()[2:len(data.get_column_names())]
+    for r in data:
+        y = r.get_array()[2: len(r.get_array())]
+        group = r.get_array()[0]
+        description = "LDCs"
+        datasets.append([x,y, group, description])
+    
+    show(line_chart(datasets, datasets[0][3]))
+    
+    return datasets   
 
 def show_weighted_average(years, indicator, weight, groups):
     datasets = []

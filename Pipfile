@@ -21,6 +21,9 @@ jupyterthemes = "*"
 xlrd = "*"
 rise = "*"
 jupyter-contrib-nbextensions = "*"
+jupyter-nbextensions-configurator = "*"
+autopep8 = "*"
+geopandas = "*"
 
 [dev-packages]
 pylint = "*"

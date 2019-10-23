@@ -33,3 +33,4 @@ def get_indicators(groups = []):
 
     return(load_data())
 
+
