@@ -78,7 +78,7 @@ def scatter_plot(x, y, radii, entities):
 
     return p
 
-def show_line_by_line(data), **kwargs:   
+def show_line_by_line(data, **kwargs):   
     datasets = []
     x = data.get_column_names()[2:len(data.get_column_names())]
     for r in data:
@@ -117,7 +117,7 @@ def show_group_total(years, indicator, groups):
         data_group.entities_description = group
         datasets.append([x,y, group, data_group.description])
     series = datasets
-    show(line_chart(series, series[0][3]))        
+    show(line_chart(series, series[0][3]))    
 
 def get_pandas_dataframe(series):
     data = []

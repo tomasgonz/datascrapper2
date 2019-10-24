@@ -5,6 +5,7 @@ from data.Cell import Cell
 import xlsxwriter
 import datetime
 from texttable import Texttable
+import pandas
 
 class Frame(list):
 
@@ -218,3 +219,15 @@ class Frame(list):
 		    i=i+1
 
 		wb.close()
+
+	def to_pandas(self):
+		pass
+
+	def as_array(self):
+
+		new_array = []
+
+		for r in self:
+			new_array.append(r)
+
+		return new_array
