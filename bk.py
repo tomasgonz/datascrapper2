@@ -78,7 +78,7 @@ def scatter_plot(x, y, radii, entities):
 
     return p
 
-def show_line_by_line(data)    
+def show_line_by_line(data), **kwargs:   
     datasets = []
     x = data.get_column_names()[2:len(data.get_column_names())]
     for r in data:
