@@ -28,10 +28,13 @@ def estimate(years,indicator, groups, weight = None):
     
     return (df_ldcs_w)
 
-def line_chart(series, title):
+def line_chart(series, title, **kwargs):
     # output_file("data.html")
     # create a new plot with a title and axis labels
-    p = figure(title=title, x_axis_label='Years', y_axis_label='Percentage', height = 400, width = 950)        
+    p = figure(title=title, x_axis_label=kwargs['x_axis_label'], 
+        y_axis_label=kwargs['y_axis_label'], 
+        height = kwargs['height'],
+         width = kwargs['width'])        
     j = 0
     for data in series:                
         # output to static HTML file
@@ -64,7 +67,7 @@ def scatter_plot(x, y, radii, entities):
     p = figure(title="HAI vs EVI", 
             x_axis_label='EVI', 
             y_axis_label='HAI', 
-            tools=["hover",], height = 600, width = 750)    
+            tools=["hover",], height = 600, width = 950)    
 
     p.scatter(x='evi', y='hai', 
             radius='radii', 
@@ -102,7 +105,7 @@ def show_weighted_average(years, indicator, weight, groups):
         data_group.entities_description = group
         datasets.append([x,y, group, data_group.description])
     series = datasets
-    show(line_chart(series, series[0][3]))
+    show(line_chart(series, series[0][3], x_axis_label="Years", y_axis_label=indicator, height=400, width=800))
 
     return series
 
@@ -117,7 +120,7 @@ def show_group_total(years, indicator, groups):
         data_group.entities_description = group
         datasets.append([x,y, group, data_group.description])
     series = datasets
-    show(line_chart(series, series[0][3]))    
+    show(line_chart(series, series[0][3], x_axis_label="Years", y_axis_label=indicator, height=400, width=900))    
 
 def get_pandas_dataframe(series):
     data = []
