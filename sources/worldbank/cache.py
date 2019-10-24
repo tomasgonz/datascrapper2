@@ -1,11 +1,13 @@
 import urllib
 import json
 import json
+import os
 import os.path
 import time
+import sources
 
 per_page = 30000
-cache_folder = 'data'
+cache_folder = os.getcwd().split('datascrapper2')[0] + 'datascrapper2/sources/worldbank/cache'
 # 604800 is on week
 max_age = 604800
 
