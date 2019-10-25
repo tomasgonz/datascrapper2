@@ -12,13 +12,12 @@ def get_data_table(years, indicator, groups, export_to_excel=False):
     ndf = Frame()
     # Now we get the data that we want to average by region (defined in the groups)
     # and also total
-    for g in groups:
+    for g in groups:        
         # Data points
         df_d = get_df(name=indicator,
             years = years,
             countries=c.get_country_names_from_groups(g)
             )
-
         df_data = df_d.wide(label_field='entity',
             value_field='value',
             column_field='date')

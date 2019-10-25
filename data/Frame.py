@@ -5,7 +5,7 @@ from data.Cell import Cell
 import xlsxwriter
 import datetime
 from texttable import Texttable
-import pandas
+import pandas as pd
 
 class Frame(list):
 
@@ -112,7 +112,7 @@ class Frame(list):
 
 		table.add_row(self.get_column_names())
 		for r in self:
-			table.add_row(r.get_array())
+			table.add_row(r.as_array())
 
 		table.set_cols_width(cols_width)
 		table_s = " %s\n%s" % (self.name, table.draw())
@@ -220,8 +220,16 @@ class Frame(list):
 
 		wb.close()
 
-	def to_pandas(self):
-		pass
+	def as_pandas(self):
+		data = []
+		cols = self.get_column_names()
+    	
+		for r in self:
+			data.append(r.as_array())
+
+		df = pd.DataFrame(data = data, columns = cols)
+		
+		return df
 
 	def as_array(self):
 

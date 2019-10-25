@@ -26,7 +26,7 @@ class Row(list):
 			if c.column.name == column_name:
 				return c
 
-	def get_array(self):
+	def as_array(self):
 		r = []
 
 		for c in self.cells:
