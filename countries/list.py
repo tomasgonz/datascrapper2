@@ -4,6 +4,8 @@ from countries.country import Country
 import pickle
 import sources
 from texttable import Texttable
+import os
+from countries.cache import *
 
 from countries.data import ldcs2025, ldcs2018, ldcs2017, lldcs, mics, mics_lower, \
 	mics_upper, oecd, sids, africa, asia, \
@@ -11,6 +13,8 @@ from countries.data import ldcs2025, ldcs2018, ldcs2017, lldcs, mics, mics_lower
 	europe, oecd, pacific_islands, asia_and_the_pacific, \
 	developing_excluding_ldcs, \
 	country_alias
+
+cache_folder = os.getcwd().split('datascrapper2')[0] + 'datascrapper2/countries/cache'
 
 class CountryList(list):
 
@@ -256,13 +260,18 @@ class CountryList(list):
 	def load_wb(self):
 		# Load country data from the worldbank
 		# We fetch data from the World Bank
-		url = "http://api.worldbank.org/countries?format=json&per_page=30000"
-		response = urllib.request.urlopen(url)
-		codec = response.info().get_param('charset', 'utf8')
-		data = json.loads(response.read().decode(codec))
+		file_name = 'countries'
+		p = get_file_path(file_name)
+		if check_cache(p) == False:
 
+			retrieve_and_cache(name=file_name)	
+		else:
+			check_age(file_name)    	
+		
+		cached_data = load_cache(p)
+		
 		# Store data in array
-		for item in data[1]:
+		for item in cached_data[1]:
 			c = Country()
 			c.name = item['name']
 			c.iso2code = item['iso2Code']
