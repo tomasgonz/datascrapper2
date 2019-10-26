@@ -57,26 +57,26 @@ class CountryList(list):
 				return c
 		return None
 
-	def get_countries_as_iso2_list(self, countries):
+	def as_iso2(self, countries):
 		iso2_list = []
 		for country in countries:
 			if (self.get_iso2_from_country_name(country) != None):
 				iso2_list.append(self.get_iso2_from_country_name(country))
 		return iso2_list
 
-	def get_countries_as_iso3_list(self, countries):
+	def as_iso3(self, countries):
 		iso3_list = []
 		for country in countries:
 			if (self.get_iso3_from_country_name(country) != None):
 				iso3_list.append(self.get_iso3_from_country_name(country))
 		return iso3_list
 
-	def get_country_from_iso2(self, iso2code):
+	def get_name_from_iso2(self, iso2code):
 		for c in self:
 			if c.iso2code == iso2code:
 				return c.name
 
-	def get_country_from_iso3(self, iso3code):
+	def get_name_from_iso3(self, iso3code):
 		for c in self:
 			if c.iso3code == iso3code:
 				return c.name
@@ -161,15 +161,14 @@ class CountryList(list):
 		return groups
 
 	# Check if a country belongs to a group
-	def check_country(self, country):
+	def is_in_group(self, country):
 		for c in self:
 			if c.name == country or country in c.groups:
 				return True
-
 		return False
 
 	# Check if a country belongs to a region
-	def check_region(self, country):
+	def is_in_region(self, country):
 
 		if country in africa:
 			return "Africa"
@@ -198,30 +197,6 @@ class CountryList(list):
 		
 		return country_names
 
-	# Return name of countries as a list
-	def get_List(self, cs):
-
-		ctrs = []
-
-		for c in cs:
-			for w in self:
-				if c == w.name:
-					ctrs.append(w)
-
-		return ctrs
-
-
-
-	def get_List_as_json(self, cs):
-		ctrs = {}
-
-		for c in cs:
-			for w in self:
-				if c == w.name:
-					ctrs[w.name] = w.as_json()
-
-		return ctrs
-
 	# Return country names as json
 	def as_json(self):
 		ctrs = {}
@@ -231,14 +206,13 @@ class CountryList(list):
 		return ctrs
 	
 	# Get group of countries
-	def get_groups(self, g):
+	def get_countries_in_group(self, g):
 		ctrs = []
 		for c in self:
 			if set(g).issubset(c.groups):
 				ctrs.append(c)
 
 		return ctrs
-
 
 	# Get single group names as stored in countries
 	def get_group_names(self, g):
@@ -288,10 +262,6 @@ class CountryList(list):
 
 		# Now we add aliases of countries
 		self.load_country_alias()
-
-		# Save to disk
-		pkl = open("countries.pkl", "wb")
-		pickle.dump(c, pkl)
 
 	def load_fao_code(self):
 		sources.fao.data.load_countries()
