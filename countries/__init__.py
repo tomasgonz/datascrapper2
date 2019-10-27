@@ -4,3 +4,5 @@ import countries.country
 import countries.list
 import countries.utils
 import countries.cache
+
+countries = countries.list.CountryList()

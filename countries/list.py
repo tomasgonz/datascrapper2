@@ -25,6 +25,8 @@ class CountryList(list):
 		return self.instance
 
 	def __init__(self):
+		if len(self) == 0:
+			self.load_wb()
 		pass
 
 	def __iter__(self):
@@ -93,7 +95,7 @@ class CountryList(list):
 		names = []
 		for c in ctrs:
 			names.append(c.name)
-
+			
 		return(names)
 
 	def get_country_names_and_aliases(self, ctrs):
