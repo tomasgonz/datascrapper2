@@ -19,7 +19,6 @@ def get(**kwargs):
         check_age(kwargs['name'])
     cached_data = load_cache(p)
     n_data = []
-    
     for item in cached_data['data']:
         if (item['entity'] in kwargs['countries']) and item['date'] in kwargs['years']:
             n_data.append(item)

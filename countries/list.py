@@ -213,6 +213,14 @@ class CountryList(list):
 				ctrs.append(c)
 
 		return ctrs
+	
+	def get_country_names_in_group(self, g):
+		ctrs = []
+		for c in self:
+			if set(g).issubset(c.groups):
+				ctrs.append(c.name)
+
+		return ctrs
 
 	# Get single group names as stored in countries
 	def get_group_names(self, g):
@@ -256,7 +264,7 @@ class CountryList(list):
 			c.capital_latitude = item['latitude']
 			c.lendingtype = item['lendingType']['value']
 			c.groups = self.get_country_groups(c.name)
-			c.region = self.check_region(c.name)
+			c.region = self.is_in_region(c.name)
 
 			self.append(c)
 
