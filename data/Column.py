@@ -1,7 +1,7 @@
 class Column(list):
 
 	def __init__(self):
-		self.name=""
+		self.name = ""
 		# Collection of all values of the column
 		pass
 
@@ -89,9 +89,7 @@ class Column(list):
 				if self.is_number(c.value.value):
 					result = float(result) + float(c.value.value)
 		return result
-
-
-
+		
 	def get_unique_values(self):
 		values = []
 		for c in self:

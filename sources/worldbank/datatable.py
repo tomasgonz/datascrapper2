@@ -12,11 +12,11 @@ def get_data_table(years, indicator, groups, export_to_excel=False):
     ndf = Frame()
     # Now we get the data that we want to average by region (defined in the groups)
     # and also total
-    for g in groups:        
+    for g in groups:  
         # Data points
         df_d = get_df(name=indicator,
             years = years,
-            countries=c.get_countries_in_group(g)
+            countries=c.get_country_names_in_group(g)
             )
         df_data = df_d.wide(label_field='entity',
             value_field='value',
@@ -24,6 +24,8 @@ def get_data_table(years, indicator, groups, export_to_excel=False):
 
         for r in df_data.rows:
             ndf.rows.append(r)
+
+
 
     # Produce dataframe that will be returned as a result of the function
     final_df = Frame()
@@ -33,6 +35,7 @@ def get_data_table(years, indicator, groups, export_to_excel=False):
         final_df.add_column(ndf.get_column(float('%s.0' % (str(y)))))
 
     s = ""
+
     for g in groups:
         for i in g:
             s =  i + "_" + s

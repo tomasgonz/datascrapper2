@@ -17,7 +17,6 @@ class Frame(list):
 		self.source = ""
 		self.source_url = ""
 		self.entities_description = ""
-
 		self._columns = Columns()
 
 	def __repr__(self):
@@ -62,11 +61,11 @@ class Frame(list):
 
 	def get_columns(self):
 		self._columns = []
-
 		for c in self.get_column_names():
-			self.columns.append(self.get_column(c))
+			print(c)
+			self._columns.append(self.get_column(c))
 
-		return self.columns
+		return self._columns
 
 	def add_column(self, c):
 		if len(c) != len(self) and len(self) != 0:
@@ -88,9 +87,11 @@ class Frame(list):
 
 	@property
 	def columns(self):
-		self._columns = Columns()=
+		
+		self._columns = Columns()
 		for c in self.get_column_names():
-			new_column = Column()
+			
+			new_column = self.get_column(c)
 			new_column.name = c
 			self._columns.append(new_column)
 

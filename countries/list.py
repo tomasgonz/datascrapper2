@@ -213,6 +213,14 @@ class CountryList(list):
 				ctrs.append(c)
 
 		return ctrs
+	
+	def get_country_names_in_group(self, g):
+		ctrs = []
+		for c in self:
+			if set(g).issubset(c.groups):
+				ctrs.append(c.name)
+
+		return ctrs
 
 	# Get single group names as stored in countries
 	def get_group_names(self, g):
