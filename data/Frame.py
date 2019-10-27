@@ -88,8 +88,8 @@ class Frame(list):
 	def columns(self):
 		
 		self._columns = Columns()
+
 		for c in self.get_column_names():
-			
 			new_column = self.get_column(c)
 			new_column.name = c
 			self._columns.append(new_column)
@@ -139,7 +139,7 @@ class Frame(list):
 
 		for r in self:
 			for c in r:
-				if c.column.name == field and c.value.value == values:
+				if c.column.name == field and c.value.value in values:
 					df.append(r)
 
 		return df
