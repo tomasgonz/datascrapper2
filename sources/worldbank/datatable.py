@@ -16,7 +16,7 @@ def get_data_table(years, indicator, groups, export_to_excel=False):
         # Data points
         df_d = get_df(name=indicator,
             years = years,
-            countries=c.get_country_names_from_groups(g)
+            countries=c.get_countries_in_group(g)
             )
         df_data = df_d.wide(label_field='entity',
             value_field='value',

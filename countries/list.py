@@ -256,7 +256,7 @@ class CountryList(list):
 			c.capital_latitude = item['latitude']
 			c.lendingtype = item['lendingType']['value']
 			c.groups = self.get_country_groups(c.name)
-			c.region = self.check_region(c.name)
+			c.region = self.is_in_region(c.name)
 
 			self.append(c)
 

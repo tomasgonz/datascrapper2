@@ -18,7 +18,7 @@ class Frame(list):
 		self.source_url = ""
 		self.entities_description = ""
 
-		self.columns = Columns()
+		self._columns = Columns()
 
 	def __repr__(self):
 		return self.print()
@@ -61,7 +61,7 @@ class Frame(list):
 		return (values)
 
 	def get_columns(self):
-		self.columns = []
+		self._columns = []
 
 		for c in self.get_column_names():
 			self.columns.append(self.get_column(c))
@@ -85,6 +85,16 @@ class Frame(list):
 				i = i + 1
 
 		return True
+
+	@property
+	def columns(self):
+		self._columns = Columns()=
+		for c in self.get_column_names():
+			new_column = Column()
+			new_column.name = c
+			self._columns.append(new_column)
+
+		return self._columns
 
 	# Adds a row object to the list of rows of the dataframe
 	def add_row(self, r):

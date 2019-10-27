@@ -40,7 +40,7 @@ def get_population_projection(ctrs):
     return new_df
 
 def get_projection_by_group(group):    
-    ctrs = c.get_country_names_and_aliases(c.get_groups([group]))    
+    ctrs = c.get_country_names_and_aliases(c.get_countries_in_group([group]))    
     new_df = Frame.Frame()
     data_frame = load_projections()
     for r in data_frame:        
