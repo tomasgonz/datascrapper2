@@ -24,7 +24,7 @@ def get_indicators(groups = []):
     ctrs = []
     if len(groups) > 0:
         for g in groups:
-            ctrs = ctrs + c.get_country_names_and_aliases(c.get_groups([g]))    
+            ctrs = ctrs + c.get_country_names_and_aliases(c.get_countries_in_group([g]))    
         
         for r in data:
             if (r.get_by_column_name('entity').get_value() in ctrs):

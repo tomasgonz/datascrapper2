@@ -62,7 +62,6 @@ class Frame(list):
 	def get_columns(self):
 		self._columns = []
 		for c in self.get_column_names():
-			print(c)
 			self._columns.append(self.get_column(c))
 
 		return self._columns

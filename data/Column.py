@@ -54,7 +54,7 @@ class Column(list):
 			for c in self:
 				c.set_value(c.get_value() * values)
 
-	def exp(self):
+	def exp(self, values):
 		if isinstance(values, list) and len(self) == len(values):
 			i = 0
 			for v in values:
