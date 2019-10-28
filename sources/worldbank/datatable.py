@@ -1,6 +1,6 @@
 import sources
 from data.Frame import Frame
-from countries.list import CountryList
+from geo.list import CountryList
 
 c = CountryList()
 c.load_wb()

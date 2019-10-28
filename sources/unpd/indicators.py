@@ -3,7 +3,7 @@ sys.path.append("../")
 import os
 import pandas as pd
 from data import Frame, Row, Column
-from countries.list import CountryList
+from geo.list import CountryList
 c = CountryList()
 c.load_wb()
 cache_folder = os.getcwd().split('datascrapper2')[0] + 'datascrapper2/sources/unpd/data'

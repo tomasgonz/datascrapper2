@@ -2,7 +2,7 @@ import sys
 sys.path.append("../")
 import pandas as pd
 from data import Frame, Row, Column
-from countries.list import CountryList
+from geo.list import CountryList
 c = CountryList()
 c.load_wb()
 un_ldc_data_2018_data_source = '../../sources/cdp/data/ldc_data_2018.xlsx'

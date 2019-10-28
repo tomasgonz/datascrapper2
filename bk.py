@@ -3,7 +3,7 @@ import json
 import urllib.request
 from IPython.display import clear_output
 import sources
-from countries.list import CountryList
+from geo.list import CountryList
 from data.Frame import Frame
 from data.Stats import calculate_weighted_average as wa
 c = CountryList()

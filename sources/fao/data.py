@@ -3,7 +3,7 @@ import re
 import requests
 from data.Frame import Frame
 from sources.fao.utils import json_to_frame
-from countries.list import CountryList
+from geo.list import CountryList
 
 __version__ = '0.1.0'
 

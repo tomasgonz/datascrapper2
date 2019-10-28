@@ -1,7 +1,7 @@
 import re
 import requests
 from data.Frame import Frame
-from countries.list import CountryList
+from geo.list import CountryList
 from sources.sdgs.utils import json_to_frame
 
 areas = Frame()
