@@ -98,7 +98,7 @@ class Column(list):
 
 		return (values)
 
-	def get_as_array(self):
+	def as_array(self):
 		values = []
 		for c in self:
 			values.append(c.get_value())

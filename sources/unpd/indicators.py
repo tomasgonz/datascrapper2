@@ -3,6 +3,7 @@ sys.path.append("../")
 import os
 import pandas as pd
 from data import Frame, Row, Column
+import geo
 from geo.list import CountryList
 c = CountryList()
 c.load_wb()
@@ -45,6 +46,20 @@ def get_age_group(age_group, countries):
     new_data = new_data.wide('entity', age_group, 'Reference date (as of 1 July)')
 
     return new_data
+
+def get_age_group_by_country_groups(age_group, country_groups):
+    datasets = []
+    for g in country_groups:
+        sums = []
+        ctrs = geo.countries.get_country_names_and_aliases(geo.countries.get_countries_in_group([g]))
+        data = get_age_group(age_group, ctrs)    
+        x = data.get_column_names()[1:len(data.get_column_names())]
+
+        for i in range(1,len(data.columns)):
+            sums.append(data.columns[i].sum())
+
+        datasets.append([x, sums, g, ''])
+    return datasets
 
 def get_population_projection(ctrs):
     new_df = Frame.Frame()
