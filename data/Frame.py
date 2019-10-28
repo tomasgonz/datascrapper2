@@ -145,12 +145,8 @@ class Frame(list):
 		return df
 
 	# Returns a dataframe in wide format
-	def wide(self, label_field, value_field, column_field, export=False):
+	def wide(self, label_field, value_field, column_field):
 		# Frame that we will use to return our results
-
-		if export == True:
-			self.to_xlsx()
-		
 		ndf = Frame()
 		# Store column names
 		cols = []
@@ -173,7 +169,7 @@ class Frame(list):
 			nr.append(Cell(column=label_field,value=r))
 
 			# Search for cells of entity and value
-			rr = self.search(label_field, r)
+			rr = self.search(label_field, [r])
 			for rrr in rr:
 				ncc = Cell()
 				for c in rrr:
