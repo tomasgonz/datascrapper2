@@ -10,10 +10,10 @@ c.load_wb()
 cache_folder = os.getcwd().split('datascrapper2')[0] + 'datascrapper2/sources/unpd/data'
 
 def load_projections(dataset = 'all'):
-    
     if dataset == 'all':
-        df = pd.read_excel(cache_folder + "/UN_PPP2019_PopTot.xlsx")    
-    elif dataset == '0-24':
+        df = pd.read_excel(cache_folder + "/UN_PPP2019_PopTot.xlsx") 
+
+    if dataset == '0-24':
         df = pd.read_excel(cache_folder + "/UN_PPP2019_Output_Pop0-24.xlsx")    
 
     tdf = Frame.Frame()
@@ -46,7 +46,7 @@ def get_age_group(age_group, countries):
     for r in data:
         if (r.get_by_column_name('entity').get_value() in countries):
             new_data.append(r)
-
+            
     new_data = new_data.wide('entity', age_group, 'Reference date (as of 1 July)')
 
     return new_data
@@ -63,6 +63,7 @@ def get_age_group_by_country_groups(age_group, country_groups):
             sums.append(data.columns[i].sum())
 
         datasets.append([x, sums, g, ''])
+        
     return datasets
 
 def get_population_projection(ctrs, dataset='all'):
@@ -85,9 +86,9 @@ def get_projection_by_group(group, dataset='all'):
 
 def get_projection_by_groups(groups, dataset='all'):
     datasets = []
-    x = get_projection_by_group(groups[0]).get_column_names()[2:len(get_projection_by_group(groups[0]).get_column_names())]
+    x = get_projection_by_group(groups[0], dataset = dataset).get_column_names()[2:len(get_projection_by_group(groups[0], dataset=dataset).get_column_names())]
     for g in groups:    
-        y = get_projection_by_group(g).get_total_by_column()[2:len(get_projection_by_group(g).get_column_names())]
+        y = get_projection_by_group(g, dataset=dataset).get_total_by_column()[2:len(get_projection_by_group(g, dataset=dataset).get_column_names())]
         datasets.append([x, y, g, 'Projected population, ' + dataset + ', thousands'])
     
     return datasets

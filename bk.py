@@ -36,6 +36,10 @@ def line_chart(series, title, **kwargs):
     if 'line_width' in kwargs:
         line_width = kwargs['line_width']
 
+    marker_width = 3
+    if 'marker_width' in kwargs:
+        marker_width = kwargs['marker_width']
+
     p = figure(title=title, x_axis_label=kwargs['x_axis_label'], 
         y_axis_label=kwargs['y_axis_label'], 
         height = kwargs['height'],
@@ -54,7 +58,7 @@ def line_chart(series, title, **kwargs):
         group = data[2]
         #legend_items.append(LegendItem(label=data[2], index=j))
         p.line(x, y, line_width=line_width, color = colors[j], legend=data[2])
-        p.circle(x, y, color=colors[j], line_width=3)
+        p.circle(x, y, color=colors[j], size=marker_width)
         j = j + 1
     
     hover = HoverTool()
@@ -119,7 +123,16 @@ def show_line_by_line(data, **kwargs):
     
     return datasets   
 
-def show_weighted_average(years, indicator, weight, groups):
+def show_weighted_average(years, indicator, weight, groups, **kwargs):
+    
+    line_width = 1
+    if line_width in kwargs:
+        line_width = kwargs['line_width']
+
+    marker_width = 1
+    if marker_width in kwargs:
+        marker_width = kwargs['marker_width']
+
     datasets = []
     for group in groups:
         data_group = estimate(years, indicator, [[group]], weight)
@@ -130,12 +143,20 @@ def show_weighted_average(years, indicator, weight, groups):
         data_group.entities_description = group
         datasets.append([x,y, group, data_group.description])
     series = datasets
-    show(line_chart(series, series[0][3], x_axis_label="Years", y_axis_label=indicator, height=400, width=800))
+    show(line_chart(series, series[0][3], x_axis_label="Years", 
+        y_axis_label=indicator, height=400, line_wdith=line_width, 
+        marker_width = marker_width))
 
     return series
 
-def show_group_total(years, indicator, groups):
+def show_group_total(years, indicator, groups, **kwargs):
     datasets = []
+
+    line_width = 1
+
+    if line_width in kwargs:
+        line_width = kwargs['line_width']
+
     for group in groups:
         data_group = get_data_table(years, indicator, [[group]])
         x = years
@@ -145,7 +166,8 @@ def show_group_total(years, indicator, groups):
         data_group.entities_description = group
         datasets.append([x,y, group, data_group.description])
     series = datasets
-    show(line_chart(series, series[0][3], x_axis_label="Years", y_axis_label=indicator, height=400, width=900))    
+    show(line_chart(series, series[0][3], x_axis_label="Years", 
+        y_axis_label=indicator, height=400, width=900, **kwargs))    
 
 def get_pandas_dataframe(series):
     data = []
