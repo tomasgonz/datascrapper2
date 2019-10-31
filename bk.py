@@ -144,7 +144,7 @@ def show_weighted_average(years, indicator, weight, groups, **kwargs):
         datasets.append([x,y, group, data_group.description])
     series = datasets
     show(line_chart(series, series[0][3], x_axis_label="Years", 
-        y_axis_label=indicator, height=400, line_wdith=line_width, 
+        y_axis_label=indicator, height=400, width=kwargs['width'], line_width=kwargs['line_width'], 
         marker_width = marker_width))
 
     return series
@@ -167,7 +167,9 @@ def show_group_total(years, indicator, groups, **kwargs):
         datasets.append([x,y, group, data_group.description])
     series = datasets
     show(line_chart(series, series[0][3], x_axis_label="Years", 
-        y_axis_label=indicator, height=400, width=900, **kwargs))    
+        y_axis_label=indicator, **kwargs))  
+
+    return series  
 
 def get_pandas_dataframe(series):
     data = []
