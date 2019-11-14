@@ -57,7 +57,7 @@ def line_chart(series, title, **kwargs):
         y = data[1]
         group = data[2]
         #legend_items.append(LegendItem(label=data[2], index=j))
-        p.line(x, y, line_width=line_width, color = colors[j], legend=data[2])
+        p.line(x, y, line_width=line_width, color = colors[j], legend_label=data[2])
         p.circle(x, y, color=colors[j], size=marker_width)
         j = j + 1
     

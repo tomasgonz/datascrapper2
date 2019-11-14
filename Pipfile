@@ -24,7 +24,7 @@ jupyter-contrib-nbextensions = "*"
 jupyter-nbextensions-configurator = "*"
 autopep8 = "*"
 geopandas = "*"
-pypiwin32 = "*"
+scikit-learn = "*"
 
 [dev-packages]
 pylint = "*"
