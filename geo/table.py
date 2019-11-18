@@ -1,4 +1,4 @@
-from geo.list import CountryList
+# from geo import countries
 from data.Frame import Frame
 
 def get(data, groups, country_field):

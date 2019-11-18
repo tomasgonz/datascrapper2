@@ -1,9 +1,5 @@
 import sources
 from data.Frame import Frame
-from geo.list import CountryList
-
-c = CountryList()
-c.load_wb()
 
 from sources.worldbank.indicators import get_data_frame as get_df
 
@@ -24,8 +20,6 @@ def get_data_table(years, indicator, groups, export_to_excel=False):
 
         for r in df_data.rows:
             ndf.rows.append(r)
-
-
 
     # Produce dataframe that will be returned as a result of the function
     final_df = Frame()

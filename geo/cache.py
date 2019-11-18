@@ -4,7 +4,6 @@ import json
 import os
 import os.path
 import time
-import sources
 
 per_page = 30000
 cache_folder = os.getcwd().split('datascrapper2')[0] + 'datascrapper2/geo/cache'

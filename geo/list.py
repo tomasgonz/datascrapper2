@@ -2,7 +2,7 @@ import urllib.request
 import json
 from geo.country import Country
 import pickle
-import sources
+#import sources
 from texttable import Texttable
 import os
 from geo.cache import *
@@ -61,9 +61,8 @@ class CountryList(list):
 
 	def as_iso2(self, countries):
 		iso2_list = []
-		for country in countries:
-			if (self.get_iso2_from_country_name(country) != None):
-				iso2_list.append(self.get_iso2_from_country_name(country))
+		for c in countries:
+			iso2_list.append(c.iso2code)
 		return iso2_list
 
 	def as_iso3(self, countries):
