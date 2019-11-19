@@ -1,0 +1,35 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+jupyter = "*"
+pymongo = "*"
+pandas = "*"
+xlsxwriter = "*"
+texttable = "*"
+pexpect = "*"
+numpy = "*"
+requests = "*"
+bokeh = "*"
+jupyterlab = "*"
+plotly = "*"
+ipywidgets = "*"
+ptable = "*"
+jupyterthemes = "*"
+xlrd = "*"
+rise = "*"
+jupyter-contrib-nbextensions = "*"
+jupyter-nbextensions-configurator = "*"
+autopep8 = "*"
+geopandas = "*"
+scikit-learn = "*"
+streamlit = "*"
+altair = "*"
+
+[dev-packages]
+pylint = "*"
+
+[requires]
+python_version = "3.7"

@@ -7,8 +7,6 @@ from geo.list import CountryList
 c = CountryList()
 c.load_wb()
 
-from geo import countries
-
 cache_folder = os.getcwd().split('datascrapper2')[0] + 'datascrapper2/sources/unpd/data'
 
 def load_projections(dataset = 'all'):

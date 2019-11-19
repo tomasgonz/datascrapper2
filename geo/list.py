@@ -191,7 +191,7 @@ class CountryList(list):
 
 	def get_country_names_from_groups(self, groups):
 
-		ctrs = self.get_groups(groups)
+		ctrs = self.get_countries_in_group(groups)
 		country_names = []
 		for ctr in ctrs:
 			country_names.append(ctr.name)
