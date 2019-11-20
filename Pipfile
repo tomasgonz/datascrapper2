@@ -25,6 +25,7 @@ jupyter-nbextensions-configurator = "*"
 autopep8 = "*"
 geopandas = "*"
 scikit-learn = "*"
+streamlit = "*"
 
 [dev-packages]
 pylint = "*"
