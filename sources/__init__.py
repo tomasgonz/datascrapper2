@@ -7,7 +7,7 @@ import sources.fao
 import sources.sdgs
 import sources.cdp
 
-__all__ = ["worldbank", "undp", "unsd", "imf", "comtrade", "sdgs", "cdp"]
+__all__ = ["worldbank", "undp", "unpd", "imf", "comtrade", "sdgs", "cdp"]
 
 def get(p):
 	if p == 'worldbank':
