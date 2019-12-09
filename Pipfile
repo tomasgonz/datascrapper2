@@ -23,13 +23,14 @@ rise = "*"
 jupyter-contrib-nbextensions = "*"
 jupyter-nbextensions-configurator = "*"
 autopep8 = "*"
-geopandas = "*"
 scikit-learn = "*"
 streamlit = "*"
 altair = "*"
+ipykernel = "*"
+colorama = "*"
 
 [dev-packages]
 pylint = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3"
