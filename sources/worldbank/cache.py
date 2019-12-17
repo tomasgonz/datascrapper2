@@ -1,6 +1,5 @@
 import urllib
 import json
-import json
 import os
 import os.path
 import time
@@ -58,5 +57,6 @@ def retrieve_and_cache(name):
             
     except ValueError:
         pass
+    
     f = get_file_path(name)
     write_cache(indicator, f)
