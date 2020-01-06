@@ -32,10 +32,13 @@ def load_cache(file_path):
         return (data)
 
 def retrieve_and_cache(name):
-    url = "http://api.worldbank.org/countries/all/indicators/" + str(name) + "?format=JSON&per_page=" + str(per_page)
-                                                                     
-    try:
+                                                                  
+    try:     
+        
+        url = "http://api.worldbank.org/countries/all/indicators/" + str(name) + "?format=JSON&per_page=" + str(per_page)
 
+        print(url)
+        
         response = urllib.request.urlopen(url)
         dd = response.read().decode('utf-8')
         dd = json.loads(dd)
@@ -51,10 +54,20 @@ def retrieve_and_cache(name):
         indicator = {
             'name': str(dd[1][0]['indicator']['id']).replace(".", ""),
             'description': str(dd[1][0]['indicator']['value']),
-            'source': 'World Bank',
+            'connector': 'World Bank',
             'sourceurl': 'http://data.worldbank.org/indicator/' + dd[1][0]['indicator']['id'],
             'data': data}
-            
+
+        url = 'http://api.worldbank.org/indicators/SP.POP.TOTL?format=json&per_page=30000'
+
+        response = urllib.request.urlopen(url)
+        data = response.read().decode('utf-8')
+        data = json.loads(data)
+
+        indicator['sourcenote'] = data[1][0]['sourceNote']
+        indicator['source'] = data[1][0]['source']['value']
+
+
     except ValueError:
         pass
     
