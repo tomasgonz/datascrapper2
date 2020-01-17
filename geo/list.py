@@ -7,7 +7,7 @@ from texttable import Texttable
 import os
 from geo.cache import *
 
-from geo.data import ldcs2025, ldcs2018, ldcs2017, lldcs, mics, mics_lower, \
+from geo.data import ldcs2025, ldcs2019, ldcs2018, ldcs2017, lldcs, mics, mics_lower, \
 	mics_upper, oecd, sids, africa, asia, \
 	america, north_america, central_america, south_america, \
 	europe, oecd, pacific_islands, asia_and_the_pacific, \
@@ -114,6 +114,9 @@ class CountryList(list):
 		if country in ldcs2025:
 			groups.append("LDCs2025")
 
+		if country in ldcs2019:
+			groups.append("LDCs2019")
+
 		if country in ldcs2018:
 			groups.append("LDCs")
 
@@ -190,11 +193,11 @@ class CountryList(list):
 			return "Europe"
 
 	def get_country_names_from_groups(self, groups):
-
 		ctrs = self.get_countries_in_group(groups)
 		country_names = []
 		for ctr in ctrs:
-			country_names.append(ctr.name)
+			if ctr.name not in country_names:
+				country_names.append(ctr.name)
 		
 		return country_names
 
@@ -210,7 +213,7 @@ class CountryList(list):
 	def get_countries_in_group(self, g):
 		ctrs = []
 		for c in self:
-			if set(g).issubset(c.groups):
+			if set(g).issubset(c.groups):				
 				ctrs.append(c)
 
 		return ctrs
@@ -218,7 +221,7 @@ class CountryList(list):
 	def get_country_names_in_group(self, g):
 		ctrs = []
 		for c in self:
-			if set(g).issubset(c.groups):
+			if set(g).issubset(c.groups) and c not in ctrs:
 				ctrs.append(c.name)
 
 		return ctrs

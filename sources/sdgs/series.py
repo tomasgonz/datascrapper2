@@ -7,7 +7,6 @@ from sources.sdgs.utils import json_to_frame
 series = Frame()
 
 def load_series():
-
     series = json_to_frame(requests.get(url).json())
     return series
 

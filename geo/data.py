@@ -36,6 +36,21 @@ ldcs2025 = {
     'Yemen, Rep.', 'Haiti'
 }
 
+ldcs2019 = [
+    'Angola', 'Benin', 'Burkina Faso', 'Burundi',
+    'Central African Republic', 'Chad', 'Comoros',
+    'Congo, Dem. Rep.', 'Djibouti',
+    'Eritrea', 'Ethiopia', 'Gambia, The', 'Guinea',
+    'Guinea-Bissau', 'Lesotho', 'Liberia', 'Madagascar',
+    'Malawi', 'Mali', 'Mauritania', 'Mozambique',
+    'Niger', 'Rwanda', 'Sao Tome and Principe',
+    'Senegal', 'Sierra Leone', 'Somalia', 'South Sudan',
+    'Sudan', 'Togo', 'Tanzania', 'Uganda',
+    'Zambia', 'Afghanistan', 'Bangladesh',
+    'Bhutan', 'Cambodia', 'Kiribati', 'Lao PDR',
+    'Myanmar', 'Nepal', 'Solomon Islands',
+    'Tuvalu', "Timor-Leste", 'Vanuatu', 'Yemen, Rep.', 'Haiti']
+
 ldcs2018 = [
     'Angola', 'Benin', 'Burkina Faso', 'Burundi',
     'Central African Republic', 'Chad', 'Comoros',
