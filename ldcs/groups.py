@@ -1,13 +1,13 @@
 import sys
 sys.path.append("..")
 import sources
-from geo.list import CountryList
+from geo.countries import Countries
 from data.Frame import Frame
 from data.Row import Row
 from data.Cell import Cell
 from data.Stats import calculate_weighted_average as wa
-c = CountryList()
-c.load_wb()
+c = Countries()
+c.
 
 groups=[['LDCs', 'Africa'],['LDCs', 'Asia and the Pacific'],['LDCs', 'America']] 
 

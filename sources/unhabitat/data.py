@@ -1,7 +1,7 @@
 import re
 import requests
 from data.Frame import Frame
-from countries.list import CountryList
+from countries.list import Countries
 
 __url_datasets = 'http://urbandata.unhabitat.org/wp-admin/admin-ajax.php?action=load_from_oipa&call=indicator-filter-options&format=json'
 

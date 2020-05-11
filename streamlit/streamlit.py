@@ -9,8 +9,8 @@ from geo import *
 
 st.title('Exploration')
 
-ctrs = geo.list.CountryList()
-ctrs.load_wb()
+ctrs = geo.countries.Countries()
+ctrs.
 
 ldcs = ctrs.get_country_names_from_groups(['LDCs'])
 

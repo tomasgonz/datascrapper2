@@ -10,7 +10,7 @@ class Cell:
 		self.value  = Value()
 
 		if 'column' in kwargs:
-			self.column.name = kwargs['column']
+			self.column.name = str(kwargs['column'])
 
 		if 'value' in kwargs:
 
@@ -27,21 +27,29 @@ class Cell:
 	def __repr__(self):
 		return str(self.get_value())
 
-	def is_number(self, s):
+	def what_is_this(self, s):
 
 		if s is None:
 			return False
-		try:
-			float(s)
-			return True
-		except ValueError:
-			return False
+		
+		if isinstance(s, int):		
+			return "int"
+		
+		if isinstance(s, float):
+			return "float"
+		
+		if isinstance(s, str):
+			return "str"
 
-	def set_value(self, v):
+	def set_value(self, v):		
 
-		if self.is_number(v):
+		if self.what_is_this(v) == "float":			 
 			self.value.set(float(v))
-		else:
+
+		if self.what_is_this(v) == "int":
+			self.value.set(int(v))
+		
+		if self.what_is_this(v) == "str":
 			self.value.set(v)
 
 	def get_value(self):

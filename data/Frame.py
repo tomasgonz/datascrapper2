@@ -22,6 +22,7 @@ class Frame(list):
 	def __repr__(self):
 		return self.print()
 
+
 	# Get a specific row
 	def get_row(self, i):
 		return(self.rows[i])
@@ -97,12 +98,13 @@ class Frame(list):
 		return self._columns
 
 	# Adds a row object to the list of rows of the dataframe
+	# The r elements consist of a dictionary
 	def add_row(self, r):
 		nr = Row()
 
 		for key in r:
 			nc = Column()
-			nc.name = key
+			nc.name = str(key)
 
 			n_cell = Cell()
 			n_cell.set_value(r[key])
@@ -111,6 +113,14 @@ class Frame(list):
 			nr.append(n_cell)
 
 		self.append(nr)
+
+	# Loads a list of dictionaries
+
+	def load_data(self, data):
+		
+		for item in data:
+			self.add_row(item)
+
 
 	# prints the dataframe
 	def print(self, **kwargs):
@@ -127,22 +137,29 @@ class Frame(list):
 		table.set_cols_width(cols_width)
 		table_s = " %s\n%s" % (self.name, table.draw())
 
-
 		return(table_s)
-
-
 
 	# search the data frame and returns dataframe with the results
 	def search(self, field, values):
-
+		
 		df = Frame()
-
+		
 		for r in self:
 			for c in r:
 				if c.column.name == field and c.value.value in values:
 					df.append(r)
 
 		return df
+		
+	# Filter based on array of values and column name
+	def filter(self, values, field):
+		new_df = Frame()    	
+		
+		for r in self:
+			if r.get_cell(field).get_value().lower() in values:
+				new_df.rows.append(r)
+		
+		return new_df
 
 	# Returns a dataframe in wide format
 	def wide(self, label_field, value_field, column_field):
@@ -156,9 +173,9 @@ class Frame(list):
 		for r in self:
 			for c in r:
 				if c.column.name == column_field and c.value.value not in cols:
-					cols.append(c.value.value)
+					cols.append(str(c.value.value))
 				if c.column.name == label_field and c.value.value not in row_labels:
-					row_labels.append(c.value.value)
+					row_labels.append(str(c.value.value))
 
 		# Sort columns
 		cols = sorted(cols)
@@ -174,7 +191,7 @@ class Frame(list):
 				ncc = Cell()
 				for c in rrr:
 					if c.column.name == column_field:
-						ncc.column.name = c.value.value
+						ncc.column.name = str(c.value.value)
 
 					if c.column.name == value_field:
 						ncc.value.set(c.value.value)

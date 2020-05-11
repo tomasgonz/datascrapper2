@@ -3,9 +3,8 @@ from data.Frame import Frame
 
 from sources.worldbank.indicators import get_data_frame as get_df
 
-from geo.list import CountryList
-c = CountryList()
-c.load_wb()
+from geo.countries import Countries
+c = Countries()
 
 def get_data_table(years, indicator, groups, export_to_excel=False):
     # We will store the final result here
