@@ -6,6 +6,7 @@ import xlsxwriter
 import datetime
 from texttable import Texttable
 import pandas as pd
+import json
 
 class Frame(list):
 
@@ -49,14 +50,14 @@ class Frame(list):
 		c = Column()
 		c.name = column_name
 		for r in self:
-			c.append(r.get_by_column_name(column_name))
+			c.append(r.get_cell(column_name))
 		return c
 
 	def get_unique_values(self, column_name):
 		values = []
 		for r in self:
-			if (r.get_by_column_name(column_name).value.value not in values):
-				values.append(r.get_by_column_name(column_name).value.value)
+			if (r.get_cell(column_name).value.value not in values):
+				values.append(r.get_cell(column_name).value.value)
 
 		return (values)
 
@@ -259,6 +260,14 @@ class Frame(list):
 		new_array = []
 
 		for r in self:
-			new_array.append(r)
+			new_array.append(r.as_array())
 
 		return new_array
+
+	def as_json(self):
+		frame_json = []
+
+		for r in self:
+			frame_json.append(r.as_json())
+
+		return frame_json

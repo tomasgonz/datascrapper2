@@ -42,6 +42,11 @@ class Row(list):
 
 		return result_cells
 
-	def to_json(self):
-		pass
+	def as_json(self):
+		row_data = {}
+		
+		for c in self.cells:
+			row_data[c.column.name] = c.value.value
+		
+		return row_data
 	

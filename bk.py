@@ -7,7 +7,7 @@ from geo.countries import Countries
 from data.Frame import Frame
 from data.Stats import calculate_weighted_average as wa
 c = Countries()
-c.
+c.load_wb()
 from sources.worldbank.indicators import get_data_frame_wide as getdfw
 from sources.worldbank.datatable import get_data_table
 import bokeh
