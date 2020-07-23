@@ -5,7 +5,6 @@ import os
 import os.path
 import time
 
-per_page = 30000
 cache_folder = os.getcwd().split('datascrapper2')[0] + 'datascrapper2/geo/cache'
 # 604800 is on week
 max_age = 604800
@@ -35,7 +34,7 @@ def retrieve_and_cache(name):
     
     # Load country data from the worldbank
     # We fetch data from the World Bank
-    url = "http://api.worldbank.org/countries?format=json&per_page=30000"
+    url = "http://api.worldbank.org/countries?format=json&per_page=304"
     response = urllib.request.urlopen(url)
     codec = response.info().get_param('charset', 'utf8')
     data = json.loads(response.read().decode(codec))

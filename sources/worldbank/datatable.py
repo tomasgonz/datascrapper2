@@ -3,9 +3,8 @@ from data.Frame import Frame
 
 from sources.worldbank.indicators import get_data_frame as get_df
 
-from geo.list import CountryList
-c = CountryList()
-c.load_wb()
+from geo.countries import Countries
+c = Countries()
 
 def get_data_table(years, indicator, groups, export_to_excel=False):
     # We will store the final result here
@@ -16,7 +15,7 @@ def get_data_table(years, indicator, groups, export_to_excel=False):
         # Data points
         df_d = get_df(name=indicator,
             years = years,
-            countries=c.get_country_names_in_group(g)
+            countries=c.get_group(g).get_names()
             )
         df_data = df_d.wide(label_field='entity',
             value_field='value',
@@ -36,7 +35,7 @@ def get_data_table(years, indicator, groups, export_to_excel=False):
 
     for g in groups:
         for i in g:
-            s =  i + "_" + s
+            s = i + "_" + s
     final_df.name = "%s-%s-%s" % (indicator, years, s)
 
     if export_to_excel == True:

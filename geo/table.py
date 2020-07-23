@@ -4,9 +4,8 @@ from data.Frame import Frame
 def get(data, groups, country_field):
     # We will store the final result here
     ndf = Frame()
-    cl = CountryList()
-    cl.load_wb()
-
+    cl = Countries()
+    
     # Now we get the data that we want to average by region (defined in the groups)
     # and also total
     # Let's conflate

@@ -1,9 +1,9 @@
 import sys
 sys.path.append("../..")
 import sources
-from geo.list import CountryList
-c = CountryList()
-c.load_wb()
+from geo.countries import Countries
+c = Countries()
+c.
 import urllib
 import requests
 import os

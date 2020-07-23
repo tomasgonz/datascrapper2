@@ -21,7 +21,7 @@ class Row(list):
 			cs.append(c.column.name)
 		return cs
 
-	def get_by_column_name(self, column_name):
+	def get_cell(self, column_name):
 		for c in self.cells:
 			if c.column.name == column_name:
 				return c
@@ -42,6 +42,11 @@ class Row(list):
 
 		return result_cells
 
-	def to_json(self):
-		pass
+	def as_json(self):
+		row_data = {}
+		
+		for c in self.cells:
+			row_data[c.column.name] = c.value.value
+		
+		return row_data
 	

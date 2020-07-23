@@ -1,11 +1,10 @@
 from data.Frame import Frame
-from geo.list import CountryList
+from geo.countries import Countries
 
 # This function returns a dataframe with countries passed as an array (g) using the field specific in (column_name)
 def extract_countries(g, column_name, df):
     n_df = Frame()
-    c = CountryList()
-    c.load_wb()
+    c = Countries()
     
     names = []
 

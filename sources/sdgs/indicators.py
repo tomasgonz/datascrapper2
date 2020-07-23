@@ -2,7 +2,7 @@
 import re
 import requests
 from data.Frame import Frame
-from geo.list import CountryList
+from geo.countries import Countries
 from sources.sdgs.utils import json_to_frame
 
 __version__ = '0.1.0'

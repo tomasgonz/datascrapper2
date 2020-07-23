@@ -87,13 +87,13 @@ lldcs = [
     'Botswana', 'Burkina Faso', 'Burundi',
     'Central African Republic',
     'Chad', 'Ethiopia', 'Lesotho',
-    'Malawi', 'Mali', 'Niger', 'Rwanda',
-    'Swaziland', 'Uganda', 'Zambia',
+    'Malawi', 'Mali', 'Niger', 'Rwanda', 'South Sudan',
+    'Eswatini', 'Uganda', 'Zambia',
     'Zimbabwe', 'Afghanistan', 'Bhutan',
-    'Kazakhstan', 'Kyrgystan', 'Lao PDR',
+    'Kazakhstan', 'Kyrgyz Republic', 'Lao PDR',
     'Mongolia', 'Nepal', 'Tajikistan', 'Turkmenistan',
-    'Uzbekistan', 'Armenia', 'Azerbaijan', 'Republic of Moldova',
-    'The Former Yugoslav Republic of Macedonia', 'Bolivia', 'Paraguay']
+    'Uzbekistan', 'Armenia', 'Azerbaijan', 'Moldova',
+    'North Macedonia', 'Bolivia', 'Paraguay']
 
 # SIDS
 
