@@ -1,0 +1,16 @@
+{
+    "id":"lldcs",
+    "Acronym":"LLDCs",
+    "Name":"Landlocked Developing Countries",
+    "Description":"Lack of territorial access to the sea, remoteness and isolation from world markets and high transit costs continue to impose serious constraints on the overall socio-economic development of landlocked developing countries. Their sea borne trade unavoidably depends on transit through other countries. Additional border crossings and long distance from the market substantially increase the total expenses for the transport services.",
+    "Names":["Botswana", "Burkina Faso", "Burundi",
+        "Central African Republic",
+        "Chad", "Ethiopia", "Lesotho",
+        "Malawi", "Mali", "Niger", "Rwanda", "South Sudan",
+        "Eswatini", "Uganda", "Zambia",
+        "Zimbabwe", "Afghanistan", "Bhutan",
+        "Kazakhstan", "Kyrgyz Republic", "Lao PDR",
+        "Mongolia", "Nepal", "Tajikistan", "Turkmenistan",
+        "Uzbekistan", "Armenia", "Azerbaijan", "Moldova",
+        "North Macedonia", "Bolivia", "Paraguay"]
+}
