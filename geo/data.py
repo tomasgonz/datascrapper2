@@ -8,17 +8,22 @@ List = []
 
 country_alias = {
     'Congo, Dem. Rep.': ['Democratic Republic of the Congo', 'DR Congo', 'DRC', 'D.R. of the Congo'],
-    'Central African Republic' : ['CAR'],
+    'Central African Republic': ['CAR'],
     'Gambia, The': ['Gambia', 'The Gambia'],
     'Tanzania': ['United Republic of Tanzania', 'U.R. of Tanzania: Mainland'],
     'Lao PDR': ["Lao People's Democratic Republic", 'Laos', 'Lao P.D.R.', "Lao People's DR"],
-    'Sao Tome and Principe':["São Tomé and Príncipe", "SÃ£o TomÃ© and PrÃ­ncipe"],
+    'Sao Tome and Principe':["São Tomé and Príncipe", "SÃ£o TomÃ© and PrÃ­ncipe", "São Tomé and Principe"],
     'Yemen, Rep.': ['Yemen'],
     'Guinea-Bissau': ['Guinea Bissau'],
     'Syria': ['Syrian Arab Republic'],
     'Bolivia':['Bolivia (Plurinational State of)'],
     'Congo':['Republic of Congo'],
-    'Iran' :['Iran (Islamic Republic of)', 'Islamic Republic of Iran']
+    'Iran' :['Iran (Islamic Republic of)', 'Islamic Republic of Iran'],
+    'United States': ['United States of America'],
+    'United Kingdom': ['United Kingdom of Great Britain and Northern Ireland'],
+    'Venezuela': ['Venezuela, RB', 'Venezuela, Bolivarian Republic of', 'Venezuela (Bolivarian Republic of)', 'Venezuela(Bolivarian Republic of)'],
+    'Saint Vincent and the Grenadines':  ['St. Vincent and the Grenadines'],
+    'Micronesia, Fed. Sts.': ['Micronesia (Federated States of)']
     }
 
 ldcs2025 = {

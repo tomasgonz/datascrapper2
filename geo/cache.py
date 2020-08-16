@@ -34,7 +34,7 @@ def retrieve_and_cache(name):
     
     # Load country data from the worldbank
     # We fetch data from the World Bank
-    url = "http://api.worldbank.org/countries?format=json&per_page=304"
+    url = "http://api.worldbank.org/v2/countries?format=json&per_page=304"
     response = urllib.request.urlopen(url)
     codec = response.info().get_param('charset', 'utf8')
     data = json.loads(response.read().decode(codec))

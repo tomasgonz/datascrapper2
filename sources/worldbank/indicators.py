@@ -67,7 +67,7 @@ def get_data_frame_wide(**kwargs):
 
 def load_all():
 
-    url = 'http://api.worldbank.org/indicators?format=json&per_page=' + \
+    url = 'http://api.worldbank.org/v2/indicators?format=json&per_page=' + \
         str(per_page)
 
     response = urllib.request.urlopen(url)

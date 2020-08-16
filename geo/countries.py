@@ -252,7 +252,6 @@ class Countries(list):
 		file_name = 'countries'
 		p = get_file_path(file_name)
 		if check_cache(p) == False:
-
 			retrieve_and_cache(name=file_name)	
 		else:
 			check_age(file_name)    	

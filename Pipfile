@@ -35,6 +35,7 @@ scipy = "*"
 sklearn = "*"
 statmodels = "*"
 statsmodels = "*"
+bs4 = "*"
 
 [dev-packages]
 pylint = "*"

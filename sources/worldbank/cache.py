@@ -35,7 +35,7 @@ def retrieve_and_cache(name):
                                                                   
     try:     
         
-        url = "http://api.worldbank.org/countries/all/indicators/" + str(name) + "?format=JSON&per_page=" + str(per_page)
+        url = "http://api.worldbank.org/v2/countries/all/indicators/" + str(name) + "?format=JSON&per_page=" + str(per_page)
 
         print(url)
         
@@ -58,7 +58,7 @@ def retrieve_and_cache(name):
             'sourceurl': 'http://data.worldbank.org/indicator/' + dd[1][0]['indicator']['id'],
             'data': data}
 
-        url = 'http://api.worldbank.org/indicators/SP.POP.TOTL?format=json&per_page=30000'
+        url = 'http://api.worldbank.org/v2/indicators/SP.POP.TOTL?format=json&per_page=30000'
 
         response = urllib.request.urlopen(url)
         data = response.read().decode('utf-8')
