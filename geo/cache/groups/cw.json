@@ -3,10 +3,12 @@
     "acronym": "cw",
     "classifier": "The Commonwealth",
     "domains": [
-        "The Commonwealth",
         "Africa",
         "Asia",
-        "Europe"
+        "Europe",
+        "Latin America and the Caribbean",
+        "Caribbean",
+        "Pacific"
     ],
     "name": "The Commonwealth",
     "description": "The Commonwealth is a voluntary association of 54 independent and equal countries. It is home to 2.4 billion people, and includes both advanced economies and developing countries.",
@@ -46,7 +48,7 @@
         "Pakistan",
         "Papua New Guinea",
         "Rwanda",
-        "Saint Kitts and Nevins",
+        "Saint Kitts and Nevis",
         "Saint Vincent and the Grenadines",
         "Samoa",
         "Seychelles",
@@ -62,7 +64,6 @@
         "Tuvalu",
         "Uganda",
         "United Kingdom",
-        "Tanzania",
         "Vanuatu",
         "Zambia",
         "Zimbabwe"

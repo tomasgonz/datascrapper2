@@ -3,7 +3,8 @@
     "acronym": "AU",
     "classifier": "African Union",
     "domains": [
-        "United Nations General Assembly"
+        "UNGA",
+        "Africa"
     ],
     "name": "African Union",
     "description": "The African Union (AU) is a continental body consisting of the 55 member states that make up the countries of the African Continent. It was officially launched in 2002 as a successor to the Organisation of African Unity (OAU, 1963-1999). ",

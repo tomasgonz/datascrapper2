@@ -3,8 +3,7 @@
     "acronym": "UN",
     "classifier": "United Nations",
     "domains": [
-        "United Nations",
-        "Multilateral Organizations"
+        "UNGA"
     ],
     "name": "United Nations",
     "description": "The United Nations is an international organization founded in 1945.  It is currently made up of 193 Member States.  The mission and work of the United Nations are guided by the purposes and principles contained in its founding Charter. Due to the powers vested in its Charter and its unique international character, the United Nations can take action on the issues confronting humanity in the 21st century, such as peace and security, climate change, sustainable development, human rights, disarmament, terrorism, humanitarian and health emergencies, gender equality, governance, food production, and more. The UN also provides a forum for its members to express their views in the General Assembly, the Security Council, the Economic and Social Council, and other bodies and committees. By enabling dialogue between its members, and by hosting negotiations, the Organization has become a mechanism for governments to find areas of agreement and solve problems together The UN's Chief Administrative Officer is the Secretary-General. 2020 marks the 75th anniversary of the United Nations.",
@@ -49,7 +48,7 @@
         "Comoros",
         "Congo",
         "Costa Rica",
-        "Côte D'Ivoire",
+        "Côte d'Ivoire",
         "Croatia",
         "Cuba",
         "Cyprus",

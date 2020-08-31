@@ -7,23 +7,29 @@ from ccs import *
 List = []
 
 country_alias = {
-    'Congo, Dem. Rep.': ['Democratic Republic of the Congo', 'DR Congo', 'DRC', 'D.R. of the Congo'],
-    'Central African Republic': ['CAR'],
-    'Gambia, The': ['Gambia', 'The Gambia'],
-    'Tanzania': ['United Republic of Tanzania', 'U.R. of Tanzania: Mainland'],
-    'Lao PDR': ["Lao People's Democratic Republic", 'Laos', 'Lao P.D.R.', "Lao People's DR"],
-    'Sao Tome and Principe':["São Tomé and Príncipe", "SÃ£o TomÃ© and PrÃ­ncipe", "São Tomé and Principe"],
-    'Yemen, Rep.': ['Yemen'],
-    'Guinea-Bissau': ['Guinea Bissau'],
-    'Syria': ['Syrian Arab Republic'],
+    'Bahamas, The': ['Bahamas'],
     'Bolivia':['Bolivia (Plurinational State of)'],
-    'Congo':['Republic of Congo'],
-    'Iran' :['Iran (Islamic Republic of)', 'Islamic Republic of Iran'],
-    'United States': ['United States of America'],
+    'Central African Republic': ['CAR'],
+    'Congo, Dem. Rep.': ['Democratic Republic of the Congo', 'DR Congo', 'DRC', 'D.R. of the Congo'],
+    'Congo': ['Republic of Congo'],
+    'Gambia, The': ['Gambia', 'The Gambia', 'Gambia (Republic of The)'],
+    'Guinea-Bissau': ['Guinea Bissau'],
+    'Iran, Islamic Rep.':['Iran', 'Iran (Islamic Republic of)', 'Islamic Republic of Iran'],
+    'Lao PDR': ["Lao People's Democratic Republic", 'Laos', 'Lao P.D.R.', "Lao People's DR"],
+    'Micronesia, Fed. Sts.': ['Micronesia (Federated States of)'],
+    'St. Vincent and the Grenadines':  ['Saint Vincent and the Grenadines'],
+    'St. Kitts and Nevis': ['Saint Kitts and Nevis '],
+    'St. Lucia': ['Saint Lucia'],
+    'Sao Tome and Principe':["São Tomé and Príncipe", "SÃ£o TomÃ© and PrÃ­ncipe", "São Tomé and Principe"],
+    'Syria': ['Syrian Arab Republic'],
+    'Tanzania': ['United Republic of Tanzania', 'U.R. of Tanzania: Mainland'],
     'United Kingdom': ['United Kingdom of Great Britain and Northern Ireland'],
+    'United States': ['United States of America'],
     'Venezuela': ['Venezuela, RB', 'Venezuela, Bolivarian Republic of', 'Venezuela (Bolivarian Republic of)', 'Venezuela(Bolivarian Republic of)'],
-    'Saint Vincent and the Grenadines':  ['St. Vincent and the Grenadines'],
-    'Micronesia, Fed. Sts.': ['Micronesia (Federated States of)']
+    'Vietnam': ['Viet Nam'],
+    'Yemen, Rep.': ['Yemen'],
+    "Egypt": ['Egypt, Arab Rep.'],
+    "Korea, Dem. People's Rep.": ["Democratic People's Republic of Korea ", 'North Korea'],
     }
 
 ldcs2025 = {

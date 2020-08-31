@@ -3,7 +3,7 @@
     "acronym": "ACP",
     "classifier": "World Trade Organisation",
     "domains": [
-        "World Trade Organisation"
+        "WTO"
     ],
     "name": "African, Caribbean and Pacific countries",
     "description": "The ACP Group comprises 79 members, forty of which are Least-Developed Countries, most of them from Africa, and its objectives are to contribute to the economic development and to the social progress of its member states.",
@@ -49,9 +49,9 @@
         "Nigeria",
         "Papua New Guinea",
         "Rwanda",
-        "St Kitts and Nevis",
-        "St Lucia",
-        "St Vincent and the Grenadines",
+        "St. Kitts and Nevis",
+        "St. Lucia",
+        "St. Vincent and the Grenadines",
         "Senegal",
         "Sierra Leone",
         "Solomon Islands",

@@ -3,7 +3,8 @@
     "acronym": "NORDIC",
     "classifier": "United Nations General Assembly",
     "domains": [
-        "United Nations General Assembly"
+        "UNGA",
+        "Europe"
     ],
     "name": "Nordic Countries",
     "description": "The Nordic co-operation involves Denmark, Finland, Iceland, Norway and Sweden as well as the three autonomous areas. Its presidency rotates annually.",

@@ -3,7 +3,7 @@
     "acronym": "LICs",
     "classifier": "World Bank",
     "domains": [
-        "United Nations General Assembly"
+        "World Bank"
     ],
     "name": "Low income Economies",
     "description": "Low Income Economies, a category established by the World Bank, for the 2021 fiscal year, are defined as those with a GNI per capita, calculated using the World Bank Atlas method ",
@@ -23,7 +23,7 @@
         "Chad",
         "Madagascar",
         "Syria",
-        "Congo, Dem. Rep",
+        "Congo, Dem. Rep.",
         "Malawi",
         "Tajikistan",
         "Eritrea",
