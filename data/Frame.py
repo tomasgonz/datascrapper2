@@ -140,6 +140,11 @@ class Frame(list):
 
 		return(table_s)
 
+	# Get number of rows
+
+	def count(self):
+		return(len(self))
+
 	# search the data frame and returns dataframe with the results
 	def search(self, field, values):
 		

@@ -50,7 +50,7 @@ def calculate_weighted_average(df_data, df_weight, label_field):
 		# We add a column where the weighted value will be stored
 		df_w.rows.append(dr)
 
-	# Now let's calculated the weighted values
+	# Now let's calculate the weighted values
 	for d in df_data.rows:
 		for c in d.cells:
 			if c.column.name != label_field:
