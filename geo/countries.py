@@ -1,8 +1,11 @@
+import sys
+import os
+sys.path.append(os.getcwd().split("datascrapper2")[0])
+import sources
 import urllib.request
 import json
 from geo.country import Country
 from texttable import Texttable
-import os
 from geo.cache import *
 
 from geo.data import ldcs2025, ldcs2019, ldcs2018, ldcs2017, lldcs, mics, mics_lower, \
@@ -92,6 +95,13 @@ class Countries(list):
 				iso3_list.append(self.get_iso3_from_country_name(country))
 		return iso3_list
 
+	# Return this lsit as fao code
+	def get_as_fao_code(self):
+		fao_code_list = []
+		for country in self:
+			fao_code_list.append(country.fao_code)	
+		return fao_code_list		
+
 	# Return the name of a country using the iso2 code
 	def get_name_from_iso2(self, iso2code):
 		for c in self:
@@ -112,6 +122,7 @@ class Countries(list):
 
 	# Return an array with country names on this list
 	def get_names(self):
+
 		names = []
 		for c in self:
 			names.append(c.name)
@@ -271,25 +282,28 @@ class Countries(list):
 			c.lendingtype = item['lendingType']['value']
 			c.groups = self.get_country_groups(c.name)
 			c.region = self.is_in_region(c.name)
-
 			self.append(c)
 
 		# Now we add aliases of countries
 		self.load_country_alias()
 
 	# Load the codes used by the FAO
-
 	def load_fao_code(self):
-		sources.fao.data.load_countries()
-		for ctr in self:
-			f_c = sources.fao.data.countries.search('label', ctr.name).rows[0].get_by_column_name('label').get_value()
-			print(f_c)
-			ctr.fao_code = f_c
+		fao_countries = sources.fao.data.load_countries()
+		for ctr in self:			
+			if (fao_countries.search('label', ctr.name).count() > 0):
+				f_c = fao_countries.search('label', ctr.name).rows[0].get_cell('code').get_value()
+				ctr.fao_code = f_c
+			else:
+				for al in ctr.alias:
+					if (fao_countries.search('label', al).count() > 0):
+						f_c = fao_countries.search('label', al).rows[0].get_cell('code').get_value()
+						ctr.fao_code = f_c	
+				
 
 	# Load the codes use by the FAO
-	
 	def load_sdg_code(self):
 		areas = sources.sdgs.areas.load_areas()
 		for a in areas:
-			if (self.get_country_by_name(a.get_by_column_name('geoAreaName').get_value()) is not None):
-				self.get_country_by_name(a.get_by_column_name('geoAreaName').get_value()).sdg_code = str(a.get_by_column_name('geoAreaCode').get_value()).split(".")[0]
+			if (self.get_cell(a.get_cell('geoAreaName').get_value()) is not None):
+				self.get_cell(a.get_cell('geoAreaName').get_value()).sdg_code = str(a.get_cell('geoAreaCode').get_value()).split(".")[0]

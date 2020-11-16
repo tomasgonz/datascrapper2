@@ -1,2 +1,10 @@
 ./vscode
 .vscode
+.vscode
+datascrapper2.code-workspace
+sources/__pycache__
+sources/fao/__pycache__
+notebooks/.ipynb_checkpoints
+notebooks/Database preparation for stats_ldcs/.ipynb_checkpoints
+notebooks/Database preparation for stats_ldcs/.ipynb_checkpoints
+notebooks/Database preparation for stats_ldcs/.ipynb_checkpoints
