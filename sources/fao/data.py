@@ -1,9 +1,7 @@
 ''' Download FAO data '''
-import re
 import requests
 from data.Frame import Frame
 from sources.fao.utils import json_to_frame
-from geo.countries import Countries
 
 __version__ = '0.1.0'
 

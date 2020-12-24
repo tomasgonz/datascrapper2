@@ -1,7 +1,6 @@
 import re
 import requests
 from data.Frame import Frame
-from countries.list import Countries
 from sources.sdgs.utils import json_to_frame
 
 series = Frame()
