@@ -7,6 +7,11 @@
     ],
     "name": "Least Developed Countries",
     "description": "The least developed countries (LDCs) is a list of developing countries that, according to the United Nations, exhibit the lowest indicators of socioeconomic development, with the lowest Human Development Index ratings of all countries in the world.",
+    "story": [
+        {"type":"paragraph", "text": "The least developed countries (LDCs) is a list of developing countries that, according to the United Nations, exhibit the lowest indicators of socioeconomic development, with the lowest Human Development Index ratings of all countries in the world."},
+        {"type":"weighted_average", "indicator":"", "average":"", 
+            "groups":"LDCs, LLDCs, SIDS"}
+    ],
     "names": [
         "Afghanistan",
         "Angola",
