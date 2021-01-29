@@ -1,13 +1,17 @@
+from geo.countries import Countries
 from data.Frame import Frame
-
 from sources.worldbank.indicators import get_data_frame as get_df
 
 def get_data_table(years, indicator, groups, export_to_excel=False):
     # We will store the final result here
     ndf = Frame()
+    c = Countries()
+    c.load_wb()
+
     # Now we get the data that we want to average by region (defined in the groups)
     # and also total
-    for g in groups:  
+    for g in groups: 
+       
         # Data points
         df_d = get_df(name=indicator,
             years = years,
@@ -23,12 +27,11 @@ def get_data_table(years, indicator, groups, export_to_excel=False):
     # Produce dataframe that will be returned as a result of the function
     final_df = Frame()
     final_df.add_column(ndf.get_column('entity'))
-
     for y in years:
-        final_df.add_column(ndf.get_column(float('%s.0' % (str(y)))))
+        final_df.add_column(ndf.get_column(str(y)))
 
     s = ""
-
+    
     for g in groups:
         for i in g:
             s = i + "_" + s
@@ -42,5 +45,6 @@ def get_data_table(years, indicator, groups, export_to_excel=False):
     final_df.description = df_data.description
     final_df.source = df_data.source
     final_df.source_url = df_data.source_url
+
 
     return final_df
