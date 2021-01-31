@@ -23,7 +23,6 @@ class Frame(list):
 	def __repr__(self):
 		return self.print()
 
-
 	# Get a specific row
 	def get_row(self, i):
 		return(self.rows[i])
@@ -102,7 +101,6 @@ class Frame(list):
 	# The r elements consist of a dictionary
 	def add_row(self, r):
 		nr = Row()
-
 		for key in r:
 			nc = Column()
 			nc.name = str(key)
@@ -110,9 +108,9 @@ class Frame(list):
 			n_cell = Cell()
 			n_cell.set_value(r[key])
 
-			n_cell.column=nc
+			n_cell.column = nc
 			nr.append(n_cell)
-
+		
 		self.append(nr)
 
 	# Loads a list of dictionaries

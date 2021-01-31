@@ -4,9 +4,7 @@ from data.Cell import Cell
 from data.Utils import is_number
 
 def calculate_weighted_average(df_data, df_weight, label_field):
-
 	df_w = Frame()
-
 	# Go through all data rows
 	for d in df_data.rows:
 		dr = Row()
@@ -24,7 +22,6 @@ def calculate_weighted_average(df_data, df_weight, label_field):
 
 				dr.add_cell(Cell(column="%s_%s" % (c.column.name, 'value'),
 								 value=data_value))
-
 				# in the new row we have already created the label field that we
 				# can use here
 				# We have to check that the data point exists for the value that we are trying to weight
@@ -90,7 +87,6 @@ def calculate_weighted_average(df_data, df_weight, label_field):
 
 				df_w.search(label_field,
 					d.get_cell(label_field).value.value).rows[0].get_cell("%s_%s" % (c.column.name, 'weighted_value')).value.value = weighted_value
-
 
 	dr = Row()
 	dr.add_cell(Cell(column=label_field, value='Average'))
