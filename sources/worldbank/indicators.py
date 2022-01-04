@@ -1,7 +1,6 @@
 import urllib
 import json
 from indicator import Indicator
-from data import Frame, Row, Column
 from indicatorlist import IndicatorList
 from sources.worldbank.cache import check_cache, load_cache, check_age, cache_folder, get_file_path
 from sources.worldbank.cache import retrieve_and_cache
