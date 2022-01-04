@@ -1,7 +1,6 @@
 import sys
 import os
 sys.path.append(os.getcwd().split("datascrapper2")[0])
-import sources
 from geo.country import Country
 from texttable import Texttable
 from geo.cache import *
