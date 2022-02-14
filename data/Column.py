@@ -1,3 +1,4 @@
+# Creating a new class called Column that is inheriting from the built-in type list.
 class Column(list):
 
 	def __init__(self):
@@ -6,6 +7,12 @@ class Column(list):
 		pass
 
 	def add(self, values):
+		'''
+		Add the values in the list to the values in the cells
+		
+		:param values: The values to add to the cells
+		:return: Nothing.
+		'''
 		if isinstance(values, list) and len(self) == len(values):
 			i = 0
 			for v in values:
@@ -43,6 +50,12 @@ class Column(list):
 
 
 	def mul(self, values):
+		'''
+		Multiply all the values in the list by the given value
+		
+		:param values: The value to multiply the vector by
+		:return: Nothing.
+		'''
 		if isinstance(values, list) and len(self) == len(values):
 			i = 0
 			for v in values:
