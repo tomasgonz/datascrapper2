@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="HtmlDocHeader"><link rel="stylesheet" href="/external/ssi/css/imf.css" type="text/css">
+<style>
+	body > div{
+		margin:1rem;
+		text-align:center;
+		font-size:1.8rem;
+		font-weight: 900;
+	}
+	body p{
+		text-align:center;
+		font-size:1.2rem;
+		letter-spacing:1px;
+		font-weight:600;
+	}
+	body > img{
+		display:block;
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);
+	}
+	body .hidden{
+		animation: fadeOut 2s;
+		animation-fill-mode: forwards;
+	}
+	@keyframes fadeOut{
+		100%{
+			opacity:0;
+			visibility:hidden;
+		}
+	}
+</style>
+<SCRIPT TYPE="text/javascript">
+function reDirectFunc() {
+  var originalURL = window.location.href;
+  var originalURLLength = originalURL.length;
+    <!-- alert(originalURL.split("?")[0].length+1); -->
+
+	var acutualURL =   originalURL.split("?")[0].length + 1;
+  var redirectURL = originalURL.substring(acutualURL, originalURLLength);
+
+  <!-- alert(redirectURL); -->
+  window.location.href = redirectURL;
+  
+  <!-- Newly Added loader animation-->
+  windows.addEventListener("load", function(){
+	const body = document.querySelector("body");
+	body.className += " hidden";
+  });
+ 
+}
+function reDirect() {
+  setTimeout(function(){ reDirectFunc() }, 1000);
+}
+
+</SCRIPT>
+<body onload="reDirect()">
+	<p><br/><br/>You are being redirected.</p>
+	<img src="/external/Fading-lines.gif" alt="loading...">
+</body>
+</html>

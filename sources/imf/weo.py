@@ -11,17 +11,18 @@ import logging
 import codecs
 import sys
 
+import pandas as pd
+
 logger = logging.getLogger()
 logging.basicConfig(level=logging.INFO)
 
-url_2014 = 'http://www.imf.org/external/pubs/ft/weo/2014/01/weodata/WEOApr2014all.xls'
-url_2015 = 'http://www.imf.org/external/pubs/ft/weo/2015/01/weodata/WEOApr2015all.xls'
-url = url_2015
+# Download the 2021 weo database from the IMF website
+url_2021 = 'https://www.imf.org/-/media/Files/Publications/WEO/WEO-Database/2021/WEOOct2021all.ashx'
+url = url_2021
 
-# weirdly it turns out the xls (url_2014) is in fact a tsv file ...
-fp_2014 = 'archive/imf-weo-2015-feb.tsv'
-fp_2015 = 'archive/imf-weo-2015-apr.tsv'
-fp = fp_2015
+# weirdly it turns out the xls is in fact a tsv file ...
+fp_2021 = 'archive/imf-weo-2021-oct.tsv'
+fp = fp_2021
 
 def download():
     logger.info('Retrieving source database: %s ...' % url)
@@ -45,8 +46,6 @@ def f_open(fn):
     else:
         f = open(filename, 'wb')
     return f
-
-
 
 def extract():
     logger.info('Starting extraction of data from: %s' % fp)
@@ -138,7 +137,7 @@ def extract():
 
     logger.info('Completed data extraction to data/ directory')
 
-def process():
+def retrieve():
     download()
     extract()
 
@@ -172,10 +171,8 @@ def check_indicators():
     for k,v in indicators.items():
         print (k, '\t\t',  v[0])
 
-# check_indicators()
-
 #'''
 if __name__ == '__main__':
     # extract()
-    process()
+    # process()
 #'''
