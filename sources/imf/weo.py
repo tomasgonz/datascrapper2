@@ -170,9 +170,3 @@ def check_indicators():
     print(len(indicators))
     for k,v in indicators.items():
         print (k, '\t\t',  v[0])
-
-#'''
-if __name__ == '__main__':
-    # extract()
-    # process()
-#'''
