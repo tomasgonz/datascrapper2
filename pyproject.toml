@@ -5,7 +5,7 @@ description = ""
 authors = ["Tomas Gonzalez <tomasgonz@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8"
 jupyter = "^1.0.0"
 texttable = "^1.6.4"
 XlsxWriter = "^3.0.2"
