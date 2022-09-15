@@ -59,7 +59,7 @@ def get_imf_data():
             'sourcenote': meta.iat[0, 2],
             'connector': "",
             'source':"IMF",
-            'sourceurl': "https://www.imf.org/en/Publications/WEO/weo-database/2021/October",
+            'sourceurl': "https://www.imf.org/en/Publications/WEO/weo-database/2022/April",
             'keyField': "entity",
             'pivotField': "date",
             'valueField': "value",

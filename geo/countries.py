@@ -129,7 +129,7 @@ class Countries(list):
 	# Return the list of names and aliases
 	def get_names_and_aliases(self):
 		names = []
-		for c in ctrs:
+		for c in self:
 			names.append(c.name)
 			for i in c.alias:
 				names.append(i)
