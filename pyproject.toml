@@ -16,6 +16,7 @@ jupyterlab = "^3.2.9"
 ipykernel = "^6.9.1"
 mitoinstaller = "^0.0.180"
 mitosheet = "^0.1.448"
+plotly = "^5.10.0"
 
 [tool.poetry.dev-dependencies]
 
