@@ -1,4 +1,4 @@
-#import sources.undp.hdi
+import sources.oecd.oda
 
 name = "OECD"
 description = "Module to access data from the OECD"
