@@ -1,10 +1,11 @@
 import pandas as pd
+import os
 
 data = pd.DataFrame()
 
 def load_data():
     global data
-    data = pd.read_csv('table2aoecd.csv')
+    data = pd.read_csv(os.path.join(os.path.dirname(__file__), "table2aoecd.csv"))
 
 def get_data(indicators, years, donors, recipients):
     global data
@@ -20,10 +21,22 @@ def get_data(indicators, years, donors, recipients):
 
 def get_aid_type():
     global data
+    if data.empty:  
+        load_data()
+
     aid_types = data['Aid type'].unique()
     return aid_types
 
 def get_donors():
     global data
+    if data.empty:  
+        load_data()
     donors = data['Donor'].unique()
     return donors
+
+def get_years():
+    global data
+    if data.empty:  
+        load_data()
+    years = data['Year'].unique()
+    return years
