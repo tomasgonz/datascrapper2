@@ -18,6 +18,7 @@ mitoinstaller = "^0.0.180"
 mitosheet = "^0.1.448"
 plotly = "^5.10.0"
 streamlit = "^1.12.2"
+altair = "^4.2.0"
 
 [tool.poetry.dev-dependencies]
 

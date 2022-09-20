@@ -1593,7 +1593,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "5a573e98ead7baa7567b4a27933eaf2e0f5cccc16762b38f5ed10356034d8037"
+content-hash = "db820f8bf21f71623b415116031e2a30364533dd17e48c50a1a17f73b9baff2a"
 
 [metadata.files]
 altair = [
