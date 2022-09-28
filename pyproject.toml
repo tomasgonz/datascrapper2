@@ -19,6 +19,7 @@ mitosheet = "^0.1.448"
 plotly = "^5.10.0"
 streamlit = "^1.12.2"
 altair = "^4.2.0"
+watchdog = "^2.1.9"
 
 [tool.poetry.dev-dependencies]
 
