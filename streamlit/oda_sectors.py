@@ -41,83 +41,108 @@ if selected_donor:
     if selected_donor != "All":
         data = data[data['Donor'].isin([selected_donor])]
 
-# 2020
-data_donors_2020 = data[data['Year'] == 2020]
-data_donors_2020 = data.groupby(['Donor', 'Sector'], as_index = False).sum()
+# 2020 - Sectors
+data_donors_sectors_2020 = data[data['Year'] == 2020]
+data_donors_sectors_2020 = data.groupby(['Donor', 'Sector'], as_index = False).sum()
 
-labels =  data_donors_2020['Donor'].unique().tolist() + all_sectors.tolist()
+labels = data_donors_sectors_2020['Donor'].unique().tolist() + all_sectors.tolist()
 
 index_source = []
-for e in data_donors_2020['Donor'].values.tolist():
+for e in data_donors_sectors_2020['Donor'].values.tolist():
     index_source.append(labels.index(e))
 
 index_destination = []
-for e in data_donors_2020['Sector'].values.tolist():
+for e in data_donors_sectors_2020['Sector'].values.tolist():
     index_destination.append(labels.index(e))
+
+st.header("How has the sectoral allocation of " + selected_donor + " evolved between 2011 and 2020?")
+
+da = data.groupby(['Year','Sector'], as_index = False).sum()[['Sector', 'Year', 'Value']].sort_values(by=['Value'], ascending = False)
+
+st.vega_lite_chart(da, {
+    'mark': {'type': 'line', 'tooltip': True, "interpolate": "monotone", "point": "True"},
+    'encoding': {
+        'x': {'field': 'Year', 'type' : 'ordinal' },
+        'y': {'field': 'Value', 'type': 'quantitative'},
+        'color': {'field': 'Sector', 'type': 'nominal'},
+    },
+}, use_container_width=True, height=800)
+
+st.header("How is " + selected_donor + " allocating its aid by sector in 2020?")
+fig = go.Figure(data=[go.Sankey(
+    node = {
+        'pad' : 15,
+        'thickness' : 20,
+        'line' : {
+            'color' : 'black', 
+            'width' : 0.5
+        },
+        'label' :labels
+    },
+    link = {
+        'source' : index_source,
+        'target' : index_destination,
+        'value' : data_donors_sectors_2020['Value']
+    }
+)])
+
+fig.update_layout(height=1000)
+
+st.plotly_chart(fig, font_size=10, use_container_width=True, height=1000)
+
+sorted_data_donors_sector_2020 = data_donors_sectors_2020[['Donor', 'Sector', "Value"]].sort_values(by=['Value'], ascending=False)
+
+st.dataframe(sorted_data_donors_sector_2020, use_container_width=True)
+
+st.header("Where is " + selected_donor + " sending its aid in 2020?")
+
+# 2020
+data_donors_recipient_2020 = data[data['Year'] == 2020]
+data_donors_recipient_2020 = data.groupby(['Donor', 'Recipient'], as_index = False).sum()
+
+labels =  data_donors_recipient_2020['Donor'].unique().tolist() + all_recipients.tolist()
+
+index_source = []
+for e in data_donors_recipient_2020['Donor'].values.tolist():
+    index_source.append(labels.index(e))
+
+index_destination = []
+for e in data_donors_recipient_2020['Recipient'].values.tolist():
+    index_destination.append(labels.index(e))
+
+fig = go.Figure(data=[go.Sankey(
+    node = {
+        'pad' : 15,
+        'thickness' : 20,
+        'line' : {
+            'color' : 'black', 
+            'width' : 0.5
+        },
+        'label' :labels
+    },
+    link = {
+        'source' : index_source,
+        'target' : index_destination,
+        'value' : data_donors_recipient_2020['Value']
+    }
+)])
+
+fig.update_layout(height=1500)
+st.plotly_chart(fig, font_size=10, use_container_width=True, height=2000)
+
+st.header("Top recipients of " + selected_donor + " in 2020")
+
+sorted_data_donors_recipient_2020 = data_donors_recipient_2020[['Donor', 'Recipient', 'Value']].sort_values(by=['Value'], ascending=False)
+
+st.dataframe(sorted_data_donors_recipient_2020, use_container_width=True)
+
+st.header("How have the trends of recipients of aid by " + selected_donor + " evolved from 2010 to 2020?")
 
 st.vega_lite_chart(data, {
     'mark': {'type': 'line', 'tooltip': True, "interpolate": "monotone", "point": "True"},
     'encoding': {
         'x': {'field': 'Year', 'type' : 'ordinal' },
         'y': {'field': 'Value', 'type': 'quantitative', 'aggregate':'sum'},
-        'color': {'field': 'Sector', 'type': 'nominal'},
+        'color': {'field': 'Recipient', 'type': 'nominal'},
     },
 }, use_container_width=True, height=800)
-
-st.header('How were donors spending their aid by sector in 2020?')
-fig = go.Figure(data=[go.Sankey(
-    node = {
-        'pad' : 15,
-        'thickness' : 20,
-        'line' : {
-            'color' : 'black', 
-            'width' : 0.5
-        },
-        'label' :labels
-    },
-    link = {
-        'source' : index_source,
-        'target' : index_destination,
-        'value' : data_donors_2020['Value']
-    }
-)])
-
-fig.update_layout(height=1000)
-
-st.plotly_chart(fig, font_size=10, use_container_width=True, height=1000)
-
-st.header("Where are donors sending their aid in 2020?")
-
-# 2020
-data_donors_2020 = data[data['Year'] == 2020]
-data_donors_2020 = data.groupby(['Donor', 'Recipient'], as_index = False).sum()
-
-labels =  data_donors_2020['Donor'].unique().tolist() + all_recipients.tolist()
-
-index_source = []
-for e in data_donors_2020['Donor'].values.tolist():
-    index_source.append(labels.index(e))
-
-index_destination = []
-for e in data_donors_2020['Recipient'].values.tolist():
-    index_destination.append(labels.index(e))
-
-fig = go.Figure(data=[go.Sankey(
-    node = {
-        'pad' : 15,
-        'thickness' : 20,
-        'line' : {
-            'color' : 'black', 
-            'width' : 0.5
-        },
-        'label' :labels
-    },
-    link = {
-        'source' : index_source,
-        'target' : index_destination,
-        'value' : data_donors_2020['Value']
-    }
-)])
-
-fig.update_layout(height=1000)
-st.plotly_chart(fig, font_size=10, use_container_width=True, height=1000)
